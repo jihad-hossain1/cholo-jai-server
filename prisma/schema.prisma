@@ -17,7 +17,7 @@ model User {
   email               String        @unique   
   mobile              String        @unique @db.VarChar(12)
   avatar              String?
-  password            String        @db.VarChar(30)
+  password            String        @db.VarChar(300)
   coverImage          String?
   refreshToken        String?
   gender              Gender
