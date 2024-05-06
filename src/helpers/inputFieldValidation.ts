@@ -87,6 +87,20 @@ const validateUserType = (userType: any): void => {
   }
 };
 
+const validateAge = (age: number): void => {
+  if (!Number.isInteger(age) || age < 0) {
+    throw new Error("Age must be a non-negative");
+    }
+
+    if (age <= 17) {
+        throw new Error("You are not adult");
+    }
+
+  if (age > 60) { 
+    throw new Error("Age less than 60");
+    } 
+};
+
 export {
   validateDateOfBirth,
   validateEmail,
@@ -95,4 +109,5 @@ export {
   validateGender,
   validateOccupation,
   validateUserType,
+  validateAge
 };

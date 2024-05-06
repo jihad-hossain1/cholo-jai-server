@@ -7,5 +7,9 @@ router.post(
   UserController.createUser
 );
 
+router.post(
+  '/user-login',
+  UserController.loginUser
+)
 
 export const UserRoutes = router;

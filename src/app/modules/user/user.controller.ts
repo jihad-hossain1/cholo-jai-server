@@ -1,14 +1,14 @@
 
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
-import { validateDateOfBirth, validateField, validateMobile,validateGender,validateOccupation,validateUserType } from "../../../helpers/inputFieldValidation";
+import { validateDateOfBirth, validateField, validateMobile,validateGender,validateOccupation,validateUserType,validateAge } from "../../../helpers/inputFieldValidation";
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
 
 const createUser = async (req: Request, res: Response)=> {
   const reqFromBody = req.body;
-  
   const {
     fullName,
     mobile,
@@ -33,6 +33,7 @@ const createUser = async (req: Request, res: Response)=> {
   validateDateOfBirth(dateOfBirth);
   validateMobile(mobile);
   validateGender(gender);
+  validateAge(age);
 
   const userEmailExist = await prisma.user.findFirst({
       where: {
@@ -57,21 +58,20 @@ const createUser = async (req: Request, res: Response)=> {
     const trimEmail = await email.split("@")[0];
 
     const generatePassword = await bcrypt.hash(password, 10);
-    console.log(generatePassword);
 
     const newUser = await prisma.user.create({
       data: {
-        fullName: fullName,
+        fullName: fullName.trim(),
         mobile: mobile,
         email: email,
         password: generatePassword,
         dateOfBirth: dateOfBirth,
         gender: gender,
-        age: age,
+        age: +age,
         occupation: occupation,
         role: role,
         userName: trimEmail,
-        address: address,
+        address: address.trim(),
       },
     });
 
@@ -87,6 +87,57 @@ const createUser = async (req: Request, res: Response)=> {
 
 };
 
+const loginUser = async (req: Request, res: Response) => {
+  const reqFromBody = req.body;
+  const { mobile, password } = reqFromBody;
+  try {
+    const user = await prisma.user.findFirst({
+      where: {
+        mobile: mobile,
+      },
+    })
+
+    if (!user) {
+      return res.status(400).json({ message: "User not found" });
+    }
+
+    const isPasswordMatched = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordMatched) {
+      return res.status(400).json({ message: "Invalid password" });
+    }
+
+     const tokenData = {
+      id: user.id,
+      userName: user.userName,
+      email: user.email,
+    };
+
+    // console.log("user from tokendata", tokenData);
+
+    const token = await jwt.sign(tokenData, process.env.JWT_SECRET!, {
+      expiresIn: "10h",
+    });
+
+    const response = res.json({
+      message: "login successfull",
+      success: true,
+    });
+
+    response.cookie("token", token, {
+      httpOnly: false,
+    })
+
+    // response.cookies.set("token", token, {
+    //   httpOnly: false,
+    // });
+
+  } catch (error) {
+    return
+  }
+}
+
 export const UserController = {
   createUser,
+  loginUser
 };
