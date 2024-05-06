@@ -8,23 +8,25 @@ datasource db {
 }
 
 model User {
-  id           String     @id @default(cuid())
-  fullName     String?    @db.VarChar(50)
-  userName     String     @db.VarChar(100)
+  id           String     @id @default(uuid())
+  fullName     String     @db.VarChar(50)
+  userName     String?    @db.VarChar(30)
   email        String     @unique
   password     String     @db.VarChar(30)
-  mobile       String     @unique @db.VarChar(12)
+  mobile       String     @unique @db.VarChar(15)
   gender       Gender
   role         Role
   age          Int
-  dateOfBirth  String     @db.VarChar(50)
-  address      String     @db.VarChar(250)
+  dateOfBirth  String     @db.VarChar(30)
+  address      String     @db.VarChar(100)
   occupation   Occupation
   refreshToken String?
   avatar       String?
   coverImage   String?
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
+
+  @@map(name: "users")
 }
 
 enum Gender {
