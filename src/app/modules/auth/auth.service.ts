@@ -1,10 +1,10 @@
+import config from "../../../config";
 import prisma from "../../../shared/prisma";
-import { IUser } from "./user.interface";
+import { IUser } from "./auth.interface";
 import bcrypt from "bcrypt";
 
 const register = async (data: IUser | any) => {
   const hashedPassword = await bcrypt.hash(data?.password, 10);
-
   const trimEmail = data?.email.split("@")[0];
   const result = await prisma.user.create({
     data: {
@@ -12,7 +12,7 @@ const register = async (data: IUser | any) => {
       fullName: data?.fullName,
       mobile: data?.mobile,
       email: data?.email,
-      password: data?.password,
+      password: hashedPassword,
       dateOfBirth: data?.dateOfBirth,
       gender: data?.gender,
       age: data?.age,

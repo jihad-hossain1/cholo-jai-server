@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
-import { AuthService } from "./user.service";
+import { AuthService } from "./auth.service";
 import httpStatus from "http-status";
 import prisma from "../../../shared/prisma";
-import { IUser } from "./user.interface";
+import { IUser } from "./auth.interface";
+import jwt from "jsonwebtoken";
+import config from "../../../config";
 
 const register = async (
   req: Request,
@@ -62,29 +64,58 @@ const register = async (
       result: result,
     });
   } catch (error) {
-    return res
-      .status(httpStatus.INTERNAL_SERVER_ERROR)
-      .json({ message: error || "Internal server error" });
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while register",
+      error: error || "Internal server error",
+    });
   }
 };
+
 const login = async (
   req: Request,
   res: Response
 ): Promise<Partial<IUser | any>> => {
   try {
     const data = await req.body;
+    const userInfo = await AuthService.login(data);
+    const token = jwt.sign(
+      {
+        exp: Math.floor(Date.now() / 1000) + 60 * 60,
+        data: {
+          userId: userInfo?.id,
+          email: userInfo?.email,
+          role: userInfo?.role,
+        },
+      },
+      "secret"
+    );
 
-    const result = await AuthService.login(data);
+    // const token = jwt.sign(
+    //   {
+    //     exp: config.jwt.expires_in,
+    //     data: {
+    //       userId: userInfo?.id,
+    //       email: userInfo?.email,
+    //       role: userInfo?.role,
+    //     },
+    //   },
+    //   config.jwt.secret as string
+    // );
+
+    res.cookie("credential", token, { httpOnly: true, secure: false });
 
     return res.status(httpStatus.OK).json({
       status: "Success",
       message: "User login successfully",
-      result: result,
+      credential: token,
     });
   } catch (error) {
-    return res
-      .status(httpStatus.INTERNAL_SERVER_ERROR)
-      .json({ message: error || "Internal server error" });
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while login",
+      error: error || "Internal server error",
+    });
   }
 };
 

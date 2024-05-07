@@ -11,9 +11,11 @@ const find = async (req: Request, res: Response) => {
       result: result,
     });
   } catch (error) {
-    return res
-      .status(httpStatus.INTERNAL_SERVER_ERROR)
-      .json({ message: error || "Internal server error" });
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while find all user",
+      error: error || "Internal server error",
+    });
   }
 };
 const findById = async (req: Request, res: Response) => {
@@ -26,9 +28,11 @@ const findById = async (req: Request, res: Response) => {
       result: result,
     });
   } catch (error) {
-    return res
-      .status(httpStatus.INTERNAL_SERVER_ERROR)
-      .json({ message: error || "Internal server error" });
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while find single user",
+      error: error || "Internal server error",
+    });
   }
 };
 
@@ -43,9 +47,11 @@ const update = async (req: Request, res: Response) => {
       result: result,
     });
   } catch (error) {
-    return res
-      .status(httpStatus.INTERNAL_SERVER_ERROR)
-      .json({ message: error || "Internal server error" });
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while update user",
+      error: error || "Internal server error",
+    });
   }
 };
 
@@ -59,9 +65,11 @@ const remove = async (req: Request, res: Response) => {
       result: result,
     });
   } catch (error) {
-    return res
-      .status(httpStatus.INTERNAL_SERVER_ERROR)
-      .json({ message: error || "Internal server error" });
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while delete user",
+      error: error || "Internal server error",
+    });
   }
 };
 

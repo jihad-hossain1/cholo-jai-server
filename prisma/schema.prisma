@@ -12,12 +12,12 @@ model User {
   fullName     String     @db.VarChar(50)
   userName     String?    @db.VarChar(30)
   email        String     @unique
-  password     String     @db.VarChar(30)
-  mobile       String     @unique @db.VarChar(15)
+  password     String     @db.VarChar(150)
+  mobile       String     @unique @db.VarChar(11)
   gender       Gender
   role         Role
   age          Int
-  dateOfBirth  String     @db.VarChar(30)
+  dateOfBirth  String     @db.VarChar(25)
   address      String     @db.VarChar(100)
   occupation   Occupation
   refreshToken String?
