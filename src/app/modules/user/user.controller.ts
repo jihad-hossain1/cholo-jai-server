@@ -119,7 +119,7 @@ const loginUser = async (req: Request, res: Response) => {
       expiresIn: "10h",
     });
 
-    const response = res.json({
+    let response = res.status(200).json({
       message: "login successfull",
       success: true,
     });
@@ -131,7 +131,7 @@ const loginUser = async (req: Request, res: Response) => {
     // response.cookies.set("token", token, {
     //   httpOnly: false,
     // });
-
+    return response
   } catch (error) {
     return
   }
