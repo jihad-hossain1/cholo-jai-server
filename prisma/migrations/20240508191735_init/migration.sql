@@ -30,6 +30,21 @@ CREATE TABLE "users" (
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "SearchRequest" (
+    "id" TEXT NOT NULL,
+    "username" VARCHAR(30) NOT NULL,
+    "contactNumber" VARCHAR(11) NOT NULL,
+    "role" "Role" NOT NULL,
+    "currentLocation" TEXT NOT NULL,
+    "destinationLocation" TEXT NOT NULL,
+    "time" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "SearchRequest_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
