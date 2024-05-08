@@ -53,6 +53,7 @@ model SearchRequest {
   currentLocation     String
   destinationLocation String
   time                String
+  matched             Boolean
   createdAt           DateTime @default(now())
   updatedAt           DateTime @default(now())
 }

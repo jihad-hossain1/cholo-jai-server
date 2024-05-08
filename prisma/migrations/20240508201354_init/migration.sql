@@ -39,6 +39,7 @@ CREATE TABLE "SearchRequest" (
     "currentLocation" TEXT NOT NULL,
     "destinationLocation" TEXT NOT NULL,
     "time" TEXT NOT NULL,
+    "matched" BOOLEAN NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
