@@ -79,6 +79,7 @@ const login = async (
   try {
     const data = await req.body;
     const userInfo = await AuthService.login(data);
+
     const token = jwt.sign(
       {
         exp: Math.floor(Date.now() / 1000) + 60 * 60,
@@ -88,24 +89,10 @@ const login = async (
           role: userInfo?.role,
         },
       },
-      "secret"
+      config.jwt.secret as string
     );
 
-    // const confi = config.jwt.secret! as string;
-
-    // const token = await jwt.sign(
-    //   {
-    //     exp: "6h",
-    //     data: {
-    //       userId: userInfo?.id,
-    //       email: userInfo?.email,
-    //       role: userInfo?.role,
-    //     },
-    //   },
-    //   confi
-    // );
-
-    res.cookie("credential", token, { httpOnly: false, secure: false });
+    res.cookie("credential", token, { httpOnly: true, secure: false });
 
     return res.status(httpStatus.OK).json({
       status: "Success",
