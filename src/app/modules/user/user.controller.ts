@@ -1,92 +1,81 @@
-
 import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
-import { validateDateOfBirth, validateField, validateMobile,validateGender,validateOccupation,validateUserType } from "../../../helpers/inputFieldValidation";
-import bcrypt from 'bcrypt';
+import httpStatus from "http-status";
+import { UserService } from "./user.service";
 
-const prisma = new PrismaClient();
-
-const createUser = async (req: Request, res: Response)=> {
-  const reqFromBody = req.body;
-  
-  const {
-    fullName,
-    mobile,
-    email,
-    password,
-    dateOfBirth,
-    gender,
-    age,
-    role,
-    occupation,
-    address,
-  } = reqFromBody;
-
+const find = async (req: Request, res: Response) => {
   try {
-  
-  validateField(fullName, "Full Name", 1, 50);
-  validateField(email, "Email", 1, 50);
-  validateField(password, "Password", 6, 30);
-  validateOccupation(occupation);
-  validateUserType(role);
-  validateField(address, "Address", 1, 250);
-  validateDateOfBirth(dateOfBirth);
-  validateMobile(mobile);
-  validateGender(gender);
-
-  const userEmailExist = await prisma.user.findFirst({
-      where: {
-        email: email,
-      },
-  });
-    
-    if (userEmailExist) {
-      return res.status(400).json({ message: "Email already exist" });
-    }
-
-    const userMobileExist = await prisma.user.findFirst({
-        where: {
-            mobile: mobile
-        }
-    })
-
-    if (userMobileExist) {
-        return res.status(400).json({ message: "Mobile already exist" });
-    }
-
-    const trimEmail = await email.split("@")[0];
-
-    const generatePassword = await bcrypt.hash(password, 10);
-    console.log(generatePassword);
-
-    const newUser = await prisma.user.create({
-      data: {
-        fullName: fullName,
-        mobile: mobile,
-        email: email,
-        password: generatePassword,
-        dateOfBirth: dateOfBirth,
-        gender: gender,
-        age: age,
-        occupation: occupation,
-        role: role,
-        userName: trimEmail,
-        address: address,
-      },
+    const result = await UserService.find();
+    return res.status(httpStatus.OK).json({
+      status: "Success",
+      message: "All users find successfully",
+      result: result,
     });
-
-    return res.status(201).json({ result: newUser });
-
   } catch (error) {
-    console.log(error);
-  if (error instanceof Error) {
-    return res.status(400).json({ message: error.message });
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while find all user",
+      error: error || "Internal server error",
+    });
   }
-}
+};
+const findById = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const result = await UserService.findById(id);
+    return res.status(httpStatus.OK).json({
+      status: "Success",
+      message: "Single user find successfully",
+      result: result,
+    });
+  } catch (error) {
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while find single user",
+      error: error || "Internal server error",
+    });
+  }
+};
 
+const update = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const data = req.body;
+    const result = await UserService.update(id, data);
+    return res.status(httpStatus.OK).json({
+      status: "Success",
+      message: "User update successfully",
+      result: result,
+    });
+  } catch (error) {
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while update user",
+      error: error || "Internal server error",
+    });
+  }
+};
 
+const remove = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const result = await UserService.remove(id);
+    return res.status(httpStatus.OK).json({
+      status: "Success",
+      message: "User delete successfully",
+      result: result,
+    });
+  } catch (error) {
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while delete user",
+      error: error || "Internal server error",
+    });
+  }
 };
 
 export const UserController = {
-  createUser,
+  find,
+  findById,
+  update,
+  remove,
 };
