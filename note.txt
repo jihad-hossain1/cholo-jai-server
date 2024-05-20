@@ -1,0 +1,82 @@
+[
+  {
+   "uniqueIdentifier": "1.1",
+    "locationName": "Kuril"
+  },
+  {
+   "uniqueIdentifier": "1.2",
+    "locationName": "Jamuna Future Park"
+  },
+  {
+   "uniqueIdentifier": "1.3",
+    "locationName": "Norda"
+  },
+  {
+   "uniqueIdentifier": "1.4",
+    "locationName": "Bhatara"
+  },
+  {
+   "uniqueIdentifier": "1.5",
+    "locationName": "Notun Bazar"
+  },
+  {
+   "uniqueIdentifier": "1.6",
+    "locationName": "Shahjadpur"
+  },
+  {
+   "uniqueIdentifier": "1.7",
+    "locationName": "North Badda"
+  },
+  {
+   "uniqueIdentifier": "1.8",
+    "locationName": "Middle Badda"
+  },
+  {
+   "uniqueIdentifier": "1.9",
+    "locationName": "South Badda"
+  },
+  {
+   "uniqueIdentifier": "1.10",
+    "locationName": "Brac University"
+  },
+  {
+   "uniqueIdentifier": "1.11",
+    "locationName": "Hatirjheel"
+  },
+  {
+   "uniqueIdentifier": "1.12",
+    "locationName": "Aftabnagar"
+  },
+  {
+   "uniqueIdentifier": "1.13",
+    "locationName": "East West University"
+  },
+  {
+   "uniqueIdentifier": "1.14",
+    "locationName": "Rampura"
+  },
+  {
+   "uniqueIdentifier": "1.15",
+    "locationName": "TV Center"
+  },
+  {
+   "uniqueIdentifier": "1.16",
+    "locationName": "Rampura Bazar"
+  },
+  {
+   "uniqueIdentifier": "1.17",
+    "locationName": "East Hajipara"
+  },
+  {
+   "uniqueIdentifier": "1.18",
+    "locationName": "Abul Hotel"
+  },
+  {
+   "uniqueIdentifier": "1.19",
+    "locationName": "Malibagh Railgate"
+  },
+  {
+   "uniqueIdentifier": "1.20",
+    "locationName": "Mouchak"
+  }
+]

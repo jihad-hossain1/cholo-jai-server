@@ -8,23 +8,24 @@ datasource db {
 }
 
 model User {
-  id           String     @id @default(uuid())
-  fullName     String     @db.VarChar(50)
-  userName     String?    @db.VarChar(30)
-  email        String     @unique
-  password     String     @db.VarChar(150)
-  mobile       String     @unique @db.VarChar(11)
-  gender       Gender
-  role         Role
-  age          Int
-  dateOfBirth  String     @db.VarChar(25)
-  address      String     @db.VarChar(100)
-  occupation   Occupation
-  refreshToken String?
-  avatar       String?
-  coverImage   String?
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
+  id            String          @id @default(uuid())
+  fullName      String          @db.VarChar(50)
+  userName      String?         @db.VarChar(30)
+  email         String          @unique
+  password      String          @db.VarChar(150)
+  mobile        String          @unique @db.VarChar(11)
+  gender        Gender
+  role          Role
+  age           Int
+  dateOfBirth   String          @db.VarChar(25)
+  address       String          @db.VarChar(100)
+  occupation    Occupation
+  refreshToken  String?
+  avatar        String?
+  coverImage    String?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  SearchRequest SearchRequest[]
 
   @@map(name: "users")
 }
@@ -45,15 +46,25 @@ enum Occupation {
   corporate
 }
 
+model Location {
+  id               String @id @default(uuid())
+  uniqueIdentifier String
+  locationName     String
+
+  @@map(name: "locations")
+}
+
 model SearchRequest {
   id                  String   @id @default(uuid())
-  username            String   @db.VarChar(30)
-  contactNumber       String   @db.VarChar(11)
-  role                Role
+  email               String
+  role                String
   currentLocation     String
   destinationLocation String
-  time                String
   matched             Boolean
+  userId              String
+  user                User     @relation(fields: [userId], references: [id])
   createdAt           DateTime @default(now())
   updatedAt           DateTime @default(now())
+
+  @@map(name: "search-request")
 }

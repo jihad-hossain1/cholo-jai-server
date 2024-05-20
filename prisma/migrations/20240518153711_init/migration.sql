@@ -31,19 +31,27 @@ CREATE TABLE "users" (
 );
 
 -- CreateTable
-CREATE TABLE "SearchRequest" (
+CREATE TABLE "locations" (
     "id" TEXT NOT NULL,
-    "username" VARCHAR(30) NOT NULL,
-    "contactNumber" VARCHAR(11) NOT NULL,
-    "role" "Role" NOT NULL,
+    "uniqueIdentifier" TEXT NOT NULL,
+    "locationName" TEXT NOT NULL,
+
+    CONSTRAINT "locations_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "search-request" (
+    "id" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "role" TEXT NOT NULL,
     "currentLocation" TEXT NOT NULL,
     "destinationLocation" TEXT NOT NULL,
-    "time" TEXT NOT NULL,
     "matched" BOOLEAN NOT NULL,
+    "userId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT "SearchRequest_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "search-request_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
@@ -51,3 +59,6 @@ CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "users_mobile_key" ON "users"("mobile");
+
+-- AddForeignKey
+ALTER TABLE "search-request" ADD CONSTRAINT "search-request_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
