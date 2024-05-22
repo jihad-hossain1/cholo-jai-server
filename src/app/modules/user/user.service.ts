@@ -14,6 +14,15 @@ const findById = async (id: any) => {
   });
   return result;
 };
+
+const findByMobile = async (mobile: string) => {
+  const result = await prisma.user.findUnique({
+    where: {
+      mobile: mobile,
+    },
+  });
+  return result;
+};
 const update = async (id: string, data: any) => {
   const result = await prisma.user.update({
     where: {
@@ -38,4 +47,5 @@ export const UserService = {
   findById,
   update,
   remove,
+  findByMobile,
 };

@@ -26,7 +26,7 @@ model User {
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
   SearchRequest SearchRequest[]
-
+  chat          Chat[]
   @@map(name: "users")
 }
 
@@ -67,4 +67,22 @@ model SearchRequest {
   updatedAt           DateTime @default(now())
 
   @@map(name: "search-request")
+}
+
+model Message {
+  id        String        @id @default(cuid())
+  message   String
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model Chat {
+  id                  String          @id @default(cuid())
+  chatName            String          @db.VarChar(30)
+  isGroupChat         Boolean         @default(false)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt     
+  groupAdmins         String             
+  user                User            @relation(fields: [groupAdmins], references: [id])    
+
 }
