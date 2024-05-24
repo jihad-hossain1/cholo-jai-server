@@ -26,12 +26,30 @@ const register = async (
       "occupation",
     ];
     for (const field of requiredFields) {
-      if (!data[field]) {
-        return res
-          .status(httpStatus.BAD_REQUEST)
-          .json({ message: `${field} is required` });
+      if (!data[field] || data[field] == "") {
+        return res.status(httpStatus.BAD_REQUEST).json({
+          error: `${field} is required`,
+          status: "Failed",
+        });
       }
     }
+
+    if (data?.role == "sharer") {
+      const areAgesValid = data?.age >= 18 && data?.age <= 60;
+      if (!areAgesValid) {
+        return res
+          .status(httpStatus.BAD_REQUEST)
+          .json({ error: "Age must be between 18 and 60", status: "Failed" });
+      }
+    }
+
+    // const isAgeDateOfBirthSame =
+    //   new Date(data?.dateOfBirth).getFullYear() == data?.age;
+    // if (!isAgeDateOfBirthSame) {
+    //   return res
+    //     .status(httpStatus.BAD_REQUEST)
+    //     .json({ error: "Age must be same as date of birth", status: "Failed" });
+    // }
 
     const isUserExist = await prisma.user.findUnique({
       where: {
@@ -41,7 +59,7 @@ const register = async (
     if (isUserExist) {
       return res
         .status(httpStatus.BAD_REQUEST)
-        .json({ message: "User already exists" });
+        .json({ error: "User already exists", status: "Failed" });
     }
 
     const isMobileExist = await prisma.user.findUnique({
@@ -53,7 +71,7 @@ const register = async (
     if (isMobileExist) {
       return res
         .status(httpStatus.BAD_REQUEST)
-        .json({ message: "Mobile number already exist" });
+        .json({ error: "Mobile number already exist", status: "Failed" });
     }
 
     const result = await AuthService.register(data);
@@ -63,11 +81,11 @@ const register = async (
       message: "User register successfully",
       result: result,
     });
-  } catch (error) {
+  } catch (error: any) {
     return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
       status: "Failed",
-      message: "Something went wrong while register",
-      error: error || "Internal server error",
+      error: "Something went wrong while register",
+      errors: error || "Internal server error",
     });
   }
 };
