@@ -99,6 +99,7 @@ const search = async (data: {
   destinationLocation: string;
   userId: string;
 }) => {
+
   try {
     const findUser = await prisma.user.findUnique({
       where: { id: data?.userId },
@@ -109,6 +110,7 @@ const search = async (data: {
     const currentLocationCheck = await prisma.location.findFirst({
       where: { uniqueIdentifier: data?.currentLocation },
     });
+    console.log("🚀 ~ currentLocationCheck:", currentLocationCheck);
 
     if (!currentLocationCheck) return null;
 

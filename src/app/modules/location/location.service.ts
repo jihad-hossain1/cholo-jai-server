@@ -1,3 +1,4 @@
+import httpStatus from "http-status";
 import prisma from "../../../shared/prisma";
 
 const createNewLocation = async (data: any) => {

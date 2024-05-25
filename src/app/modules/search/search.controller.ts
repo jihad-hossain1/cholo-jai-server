@@ -6,6 +6,7 @@ import prisma from "../../../shared/prisma";
 const search = async (req: Request, res: Response) => {
   try {
     const data = await req.body;
+
     const result = await SearchService.search(data);
 
     if (!result) {
@@ -28,6 +29,8 @@ const search = async (req: Request, res: Response) => {
     });
   }
 };
+
+
 
 export const SearchController = {
   search,
