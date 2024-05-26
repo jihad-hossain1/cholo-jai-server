@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import httpStatus from "http-status";
 import { SearchService } from "./search.service";
-import prisma from "../../../shared/prisma";
 
 const search = async (req: Request, res: Response) => {
   try {
