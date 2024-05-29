@@ -1,30 +1,32 @@
 import { Request, Response } from "express";
+import { LocationService } from "./location.service";
 import httpStatus from "http-status";
-import { UserService } from "./user.service";
+import prisma from "../../../shared/prisma";
 
 const find = async (req: Request, res: Response) => {
   try {
-    const result = await UserService.find();
+    const result = await LocationService.find();
     return res.status(httpStatus.OK).json({
       status: "Success",
-      message: "All users find successfully",
+      message: "All location found successfully",
       result: result,
     });
   } catch (error) {
     return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
       status: "Failed",
-      message: "Something went wrong while find all user",
+      message: "Something went wrong while register",
       error: error || "Internal server error",
     });
   }
 };
+
 const findById = async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
-    const result = await UserService.findById(id);
+    const result = await LocationService.findById(id);
     return res.status(httpStatus.OK).json({
       status: "Success",
-      message: "Single user find successfully",
+      message: "Single location found successfully",
       result: result,
     });
   } catch (error) {
@@ -35,19 +37,20 @@ const findById = async (req: Request, res: Response) => {
     });
   }
 };
-const findByMobile = async (req: Request, res: Response) => {
+
+const createNewLocation = async (req: Request, res: Response) => {
   try {
-    const mobile = req.params.mobile;
-    const result = await UserService.findByMobile(mobile);
+    const data = await req.body;
+    const result = await LocationService.createNewLocation(data);
     return res.status(httpStatus.OK).json({
       status: "Success",
-      message: "Single user find successfully",
+      message: "New location added successfully",
       result: result,
     });
   } catch (error) {
     return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
       status: "Failed",
-      message: "Something went wrong while find single user",
+      message: "Something went wrong while register",
       error: error || "Internal server error",
     });
   }
@@ -57,10 +60,10 @@ const update = async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
     const data = req.body;
-    const result = await UserService.update(id, data);
+    const result = await LocationService.update(id, data);
     return res.status(httpStatus.OK).json({
       status: "Success",
-      message: "User update successfully",
+      message: "Location updated successfully",
       result: result,
     });
   } catch (error) {
@@ -75,10 +78,10 @@ const update = async (req: Request, res: Response) => {
 const remove = async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
-    const result = await UserService.remove(id);
+    const result = await LocationService.remove(id);
     return res.status(httpStatus.OK).json({
       status: "Success",
-      message: "User delete successfully",
+      message: "Location deleted successfully",
       result: result,
     });
   } catch (error) {
@@ -90,11 +93,10 @@ const remove = async (req: Request, res: Response) => {
   }
 };
 
-
-export const UserController = {
+export const LocationController = {
   find,
   findById,
+  createNewLocation,
   update,
   remove,
-  findByMobile,
 };
