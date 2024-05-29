@@ -90,6 +90,7 @@ const remove = async (req: Request, res: Response) => {
   }
 };
 
+
 export const UserController = {
   find,
   findById,
