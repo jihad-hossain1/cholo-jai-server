@@ -18,7 +18,7 @@ const sendMessage = asyncHandler(async (req: Request, res: Response) => {
       data: {
         content: content,
         chat: { connect: { id: chatId } },
-        sender: { connect: { id: req.user.id } },
+        // sender: { connect: { id: req.id } },
       },
       include: {
         sender: { select: { id: true, name: true, pic: true } },
