@@ -2,13 +2,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
-
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
-        
 
 model User {
   id            String          @id @default(uuid())
@@ -28,8 +26,9 @@ model User {
   coverImage    String?
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
-  SearchRequest SearchRequest[]
-  chat          Chat[]
+  searchRequests SearchRequest[]
+  chats         ChatRoom[]      @relation("UserChats")
+  messages      Message[]       @relation("UserMessages")
   @@map(name: "users")
 }
 
@@ -72,20 +71,21 @@ model SearchRequest {
   @@map(name: "search-request")
 }
 
-model Message {
-  id        String        @id @default(cuid())
-  message   String
-  createdAt DateTime      @default(now())
-  updatedAt DateTime      @updatedAt
+model ChatRoom {
+  id        String   @id @default(uuid())
+  name     String
+  users    User[]    @relation("UserChats")
+  messages Message[]
+  @@map(name: "chat-rooms")
 }
 
-model Chat {
-  id                  String          @id @default(cuid())
-  chatName            String          @db.VarChar(30)
-  isGroupChat         Boolean         @default(false)
-  createdAt           DateTime        @default(now())
-  updatedAt           DateTime        @updatedAt     
-  groupAdmins         String             
-  user                User            @relation(fields: [groupAdmins], references: [id])    
-
+model Message {
+  id         String   @id @default(uuid())
+  content   String
+  chatRoom  ChatRoom @relation(fields: [chatRoomId], references: [id])
+  chatRoomId String
+  sender    User     @relation("UserMessages", fields: [senderId], references: [id])
+  senderId  String
+  createdAt DateTime @default(now())
+  @@map(name: "messages")
 }
