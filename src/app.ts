@@ -9,11 +9,7 @@ app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/", (req: Request, res: Response, next: NextFunction) => {
-  res.json({
-    message: "api is running",
-  });
-});
+
 app.use("/api/v1", routes);
 
 
