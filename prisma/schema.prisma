@@ -9,27 +9,26 @@ datasource db {
 }
 
 model User {
-  id             String          @id @default(uuid())
-  fullName       String          @db.VarChar(50)
-  userName       String?         @db.VarChar(30)
-  email          String          @unique
-  password       String          @db.VarChar(150)
-  mobile         String          @unique @db.VarChar(11)
-  gender         Gender
-  role           Role
-  age            Int
-  dateOfBirth    String          @db.VarChar(25)
-  address        String          @db.VarChar(100)
-  occupation     Occupation
-  refreshToken   String?
-  avatar         String?
-  coverImage     String?
-  createdAt      DateTime        @default(now())
-  updatedAt      DateTime        @updatedAt
+  id            String          @id @default(uuid())
+  fullName      String          @db.VarChar(50)
+  userName      String?         @db.VarChar(30)
+  email         String          @unique
+  password      String          @db.VarChar(150)
+  mobile        String          @unique @db.VarChar(11)
+  gender        Gender
+  role          Role
+  age           Int
+  dateOfBirth   String          @db.VarChar(25)
+  address       String          @db.VarChar(100)
+  occupation    Occupation
+  refreshToken  String?
+  avatar        String?
+  coverImage    String?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
   searchRequests SearchRequest[]
-  chats          ChatRoom[]      @relation("UserChats")
-  messages       Message[]       @relation("UserMessages")
-
+  chats         ChatRoom[]      @relation("UserChats")
+  messages      Message[]       @relation("UserMessages")
   @@map(name: "users")
 }
 
@@ -73,22 +72,20 @@ model SearchRequest {
 }
 
 model ChatRoom {
-  id       String    @id @default(uuid())
+  id        String   @id @default(uuid())
   name     String
   users    User[]    @relation("UserChats")
   messages Message[]
-
   @@map(name: "chat-rooms")
 }
 
 model Message {
   id         String   @id @default(uuid())
-  content    String
-  chatRoom   ChatRoom @relation(fields: [chatRoomId], references: [id])
+  content   String
+  chatRoom  ChatRoom @relation(fields: [chatRoomId], references: [id])
   chatRoomId String
-  sender     User     @relation("UserMessages", fields: [senderId], references: [id])
-  senderId   String
-  createdAt  DateTime @default(now())
-
+  sender    User     @relation("UserMessages", fields: [senderId], references: [id])
+  senderId  String
+  createdAt DateTime @default(now())
   @@map(name: "messages")
 }
