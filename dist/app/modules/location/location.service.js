@@ -28,16 +28,16 @@ const findById = (id) => __awaiter(void 0, void 0, void 0, function* () {
 });
 const createNewLocation = (data) => __awaiter(void 0, void 0, void 0, function* () {
     //@ For creating single location data =>
-    const result = yield prisma_1.default.location.create({
-        data: {
-            uniqueIdentifier: data === null || data === void 0 ? void 0 : data.uniqueIdentifier,
-            locationName: data === null || data === void 0 ? void 0 : data.locationName,
-        },
-    });
-    //@ For creating bulk location data =>
-    // const result = await prisma.location.createMany({
-    //   data,
+    // const result = await prisma.location.create({
+    //   data: {
+    //     uniqueIdentifier: data?.uniqueIdentifier,
+    //     locationName: data?.locationName,
+    //   },
     // });
+    //@ For creating bulk location data =>
+    const result = yield prisma_1.default.location.createMany({
+        data,
+    });
     return result;
 });
 const update = (id, data) => __awaiter(void 0, void 0, void 0, function* () {

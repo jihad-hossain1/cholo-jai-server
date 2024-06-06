@@ -4,9 +4,13 @@ import prisma from "../../../shared/prisma";
 const search = async (data: {
   currentLocation: string;
   destinationLocation: string;
+  filterVehicleType: string;
+  filterGenderType: string;
+  filterVehicleCapacity: string;
   userId: string;
 }) => {
   try {
+    console.log(data);
     const findUser = await prisma.user.findUnique({
       where: {
         id: data?.userId,
@@ -20,10 +24,15 @@ const search = async (data: {
 
     const createASearchReq = await prisma.searchRequest.create({
       data: {
+        fullName: findUser?.fullName,
         email: findUser?.email,
+        gender: findUser.gender,
         role: findUser?.role,
         currentLocation: data?.currentLocation,
         destinationLocation: data?.destinationLocation,
+        filterGenderType: data?.filterGenderType,
+        filterVehicleCapacity: data?.filterVehicleCapacity,
+        filterVehicleType: data?.filterVehicleType,
         matched: false,
         userId: data?.userId,
       },
@@ -44,6 +53,10 @@ const search = async (data: {
             where: {
               role: "traveler",
               currentLocation: data?.currentLocation,
+              destinationLocation: data?.destinationLocation,
+              filterVehicleType: data?.filterVehicleType,
+              filterVehicleCapacity: data?.filterVehicleCapacity,
+              filterGenderType: data?.filterGenderType,
               createdAt: {
                 gte: twoMinutesAgo,
                 lte: twoMinutesFromNow,
@@ -56,6 +69,10 @@ const search = async (data: {
             where: {
               role: "sharer",
               currentLocation: data?.currentLocation,
+              destinationLocation: data?.destinationLocation,
+              filterVehicleType: data?.filterVehicleType,
+              filterVehicleCapacity: data?.filterVehicleCapacity,
+              filterGenderType: data?.filterGenderType,
               createdAt: {
                 gte: twoMinutesAgo,
                 lte: twoMinutesFromNow,

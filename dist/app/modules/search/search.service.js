@@ -16,6 +16,7 @@ exports.SearchService = void 0;
 const prisma_1 = __importDefault(require("../../../shared/prisma"));
 const search = (data) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        console.log(data);
         const findUser = yield prisma_1.default.user.findUnique({
             where: {
                 id: data === null || data === void 0 ? void 0 : data.userId,
@@ -27,10 +28,15 @@ const search = (data) => __awaiter(void 0, void 0, void 0, function* () {
         }
         const createASearchReq = yield prisma_1.default.searchRequest.create({
             data: {
+                fullName: findUser === null || findUser === void 0 ? void 0 : findUser.fullName,
                 email: findUser === null || findUser === void 0 ? void 0 : findUser.email,
+                gender: findUser.gender,
                 role: findUser === null || findUser === void 0 ? void 0 : findUser.role,
                 currentLocation: data === null || data === void 0 ? void 0 : data.currentLocation,
                 destinationLocation: data === null || data === void 0 ? void 0 : data.destinationLocation,
+                filterGenderType: data === null || data === void 0 ? void 0 : data.filterGenderType,
+                filterVehicleCapacity: data === null || data === void 0 ? void 0 : data.filterVehicleCapacity,
+                filterVehicleType: data === null || data === void 0 ? void 0 : data.filterVehicleType,
                 matched: false,
                 userId: data === null || data === void 0 ? void 0 : data.userId,
             },
@@ -46,6 +52,10 @@ const search = (data) => __awaiter(void 0, void 0, void 0, function* () {
                         where: {
                             role: "traveler",
                             currentLocation: data === null || data === void 0 ? void 0 : data.currentLocation,
+                            destinationLocation: data === null || data === void 0 ? void 0 : data.destinationLocation,
+                            filterVehicleType: data === null || data === void 0 ? void 0 : data.filterVehicleType,
+                            filterVehicleCapacity: data === null || data === void 0 ? void 0 : data.filterVehicleCapacity,
+                            filterGenderType: data === null || data === void 0 ? void 0 : data.filterGenderType,
                             createdAt: {
                                 gte: twoMinutesAgo,
                                 lte: twoMinutesFromNow,
@@ -59,6 +69,10 @@ const search = (data) => __awaiter(void 0, void 0, void 0, function* () {
                         where: {
                             role: "sharer",
                             currentLocation: data === null || data === void 0 ? void 0 : data.currentLocation,
+                            destinationLocation: data === null || data === void 0 ? void 0 : data.destinationLocation,
+                            filterVehicleType: data === null || data === void 0 ? void 0 : data.filterVehicleType,
+                            filterVehicleCapacity: data === null || data === void 0 ? void 0 : data.filterVehicleCapacity,
+                            filterGenderType: data === null || data === void 0 ? void 0 : data.filterGenderType,
                             createdAt: {
                                 gte: twoMinutesAgo,
                                 lte: twoMinutesFromNow,

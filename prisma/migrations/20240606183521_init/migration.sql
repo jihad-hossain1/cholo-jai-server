@@ -42,10 +42,15 @@ CREATE TABLE "locations" (
 -- CreateTable
 CREATE TABLE "search-request" (
     "id" TEXT NOT NULL,
+    "fullName" TEXT NOT NULL,
     "email" TEXT NOT NULL,
+    "gender" TEXT NOT NULL,
     "role" TEXT NOT NULL,
     "currentLocation" TEXT NOT NULL,
     "destinationLocation" TEXT NOT NULL,
+    "filterVehicleType" TEXT,
+    "filterVehicleCapacity" TEXT,
+    "filterGenderType" TEXT,
     "matched" BOOLEAN NOT NULL,
     "userId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -56,11 +61,7 @@ CREATE TABLE "search-request" (
 
 -- CreateTable
 CREATE TABLE "chat-rooms" (
-<<<<<<<< HEAD:prisma/migrations/20240531154636_init/migration.sql
     "id" TEXT NOT NULL,
-========
-    "id" SERIAL NOT NULL,
->>>>>>>> 10f0ce4cd444c71abea89266d27c72f6f4e732a7:prisma/migrations/20240530160029_init/migration.sql
     "name" TEXT NOT NULL,
 
     CONSTRAINT "chat-rooms_pkey" PRIMARY KEY ("id")
@@ -68,15 +69,9 @@ CREATE TABLE "chat-rooms" (
 
 -- CreateTable
 CREATE TABLE "messages" (
-<<<<<<<< HEAD:prisma/migrations/20240531154636_init/migration.sql
     "id" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "chatRoomId" TEXT NOT NULL,
-========
-    "id" SERIAL NOT NULL,
-    "content" TEXT NOT NULL,
-    "chatRoomId" INTEGER NOT NULL,
->>>>>>>> 10f0ce4cd444c71abea89266d27c72f6f4e732a7:prisma/migrations/20240530160029_init/migration.sql
     "senderId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -85,11 +80,7 @@ CREATE TABLE "messages" (
 
 -- CreateTable
 CREATE TABLE "_UserChats" (
-<<<<<<<< HEAD:prisma/migrations/20240531154636_init/migration.sql
     "A" TEXT NOT NULL,
-========
-    "A" INTEGER NOT NULL,
->>>>>>>> 10f0ce4cd444c71abea89266d27c72f6f4e732a7:prisma/migrations/20240530160029_init/migration.sql
     "B" TEXT NOT NULL
 );
 
