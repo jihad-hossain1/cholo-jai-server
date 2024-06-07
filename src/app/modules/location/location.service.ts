@@ -17,17 +17,17 @@ const findById = async (id: any) => {
 
 const createNewLocation = async (data: any) => {
   //@ For creating single location data =>
-  // const result = await prisma.location.create({
-  //   data: {
-  //     uniqueIdentifier: data?.uniqueIdentifier,
-  //     locationName: data?.locationName,
-  //   },
-  // });
+  const result = await prisma.location.create({
+    data: {
+      uniqueIdentifier: data?.uniqueIdentifier,
+      locationName: data?.locationName,
+    },
+  });
 
   //@ For creating bulk location data =>
-  const result = await prisma.location.createMany({
-    data,
-  });
+  // const result = await prisma.location.createMany({
+  //   data,
+  // });
 
   return result;
 };
