@@ -1,82 +1,1709 @@
+
 [
   {
-   "uniqueIdentifier": "1.1",
+    "uniqueIdentifier": "1.1",
     "locationName": "Kuril"
   },
   {
-   "uniqueIdentifier": "1.2",
+    "uniqueIdentifier": "1.2",
     "locationName": "Jamuna Future Park"
   },
   {
-   "uniqueIdentifier": "1.3",
+    "uniqueIdentifier": "1.3",
     "locationName": "Norda"
   },
   {
-   "uniqueIdentifier": "1.4",
+    "uniqueIdentifier": "1.4",
     "locationName": "Bhatara"
   },
   {
-   "uniqueIdentifier": "1.5",
+    "uniqueIdentifier": "1.5",
     "locationName": "Notun Bazar"
   },
   {
-   "uniqueIdentifier": "1.6",
+    "uniqueIdentifier": "1.6",
     "locationName": "Shahjadpur"
   },
   {
-   "uniqueIdentifier": "1.7",
+    "uniqueIdentifier": "1.7",
     "locationName": "North Badda"
   },
   {
-   "uniqueIdentifier": "1.8",
+    "uniqueIdentifier": "1.8",
     "locationName": "Middle Badda"
   },
   {
-   "uniqueIdentifier": "1.9",
+    "uniqueIdentifier": "1.9",
     "locationName": "South Badda"
   },
   {
-   "uniqueIdentifier": "1.10",
+    "uniqueIdentifier": "1.10",
     "locationName": "Brac University"
   },
   {
-   "uniqueIdentifier": "1.11",
+    "uniqueIdentifier": "1.11",
     "locationName": "Hatirjheel"
   },
   {
-   "uniqueIdentifier": "1.12",
+    "uniqueIdentifier": "1.12",
     "locationName": "Aftabnagar"
   },
   {
-   "uniqueIdentifier": "1.13",
+    "uniqueIdentifier": "1.13",
     "locationName": "East West University"
   },
   {
-   "uniqueIdentifier": "1.14",
+    "uniqueIdentifier": "1.14",
     "locationName": "Rampura"
   },
   {
-   "uniqueIdentifier": "1.15",
+    "uniqueIdentifier": "1.15",
     "locationName": "TV Center"
   },
   {
-   "uniqueIdentifier": "1.16",
+    "uniqueIdentifier": "1.16",
     "locationName": "Rampura Bazar"
   },
   {
-   "uniqueIdentifier": "1.17",
+    "uniqueIdentifier": "1.17",
     "locationName": "East Hajipara"
   },
   {
-   "uniqueIdentifier": "1.18",
+    "uniqueIdentifier": "1.18",
     "locationName": "Abul Hotel"
   },
   {
-   "uniqueIdentifier": "1.19",
+    "uniqueIdentifier": "1.19",
     "locationName": "Malibagh Railgate"
   },
   {
-   "uniqueIdentifier": "1.20",
+    "uniqueIdentifier": "1.20",
     "locationName": "Mouchak"
+  },
+  {
+    "uniqueIdentifier": "2.1",
+    "locationName": "Mohakhali"
+  },
+  {
+    "uniqueIdentifier": "2.2",
+    "locationName": "Banani"
+  },
+  {
+    "uniqueIdentifier": "2.3",
+    "locationName": "Gulshan-1"
+  },
+  {
+    "uniqueIdentifier": "2.4",
+    "locationName": "Gulshan-2"
+  },
+  {
+    "uniqueIdentifier": "2.5",
+    "locationName": "Baridhara"
+  },
+  {
+    "uniqueIdentifier": "2.6",
+    "locationName": "Uttara"
+  },
+  {
+    "uniqueIdentifier": "2.7",
+    "locationName": "Airport"
+  },
+  {
+    "uniqueIdentifier": "2.8",
+    "locationName": "Khilkhet"
+  },
+  {
+    "uniqueIdentifier": "2.9",
+    "locationName": "Bashundhara"
+  },
+  {
+    "uniqueIdentifier": "2.10",
+    "locationName": "Khilgaon"
+  },
+  {
+    "uniqueIdentifier": "2.11",
+    "locationName": "Motijheel"
+  },
+  {
+    "uniqueIdentifier": "2.12",
+    "locationName": "Shantinagar"
+  },
+  {
+    "uniqueIdentifier": "2.13",
+    "locationName": "Kamalapur"
+  },
+  {
+    "uniqueIdentifier": "2.14",
+    "locationName": "Malibagh"
+  },
+  {
+    "uniqueIdentifier": "2.15",
+    "locationName": "Maghbazar"
+  },
+  {
+    "uniqueIdentifier": "2.16",
+    "locationName": "Eskaton"
+  },
+  {
+    "uniqueIdentifier": "2.17",
+    "locationName": "Dhanmondi"
+  },
+  {
+    "uniqueIdentifier": "2.18",
+    "locationName": "Lalmatia"
+  },
+  {
+    "uniqueIdentifier": "2.19",
+    "locationName": "Kalabagan"
+  },
+  {
+    "uniqueIdentifier": "2.20",
+    "locationName": "Shahbagh"
+  },
+  {
+    "uniqueIdentifier": "2.21",
+    "locationName": "Nilkhet"
+  },
+  {
+    "uniqueIdentifier": "2.22",
+    "locationName": "Azimpur"
+  },
+  {
+    "uniqueIdentifier": "2.23",
+    "locationName": "New Market"
+  },
+  {
+    "uniqueIdentifier": "2.24",
+    "locationName": "Mohammadpur"
+  },
+  {
+    "uniqueIdentifier": "2.25",
+    "locationName": "Mirpur-1"
+  },
+  {
+    "uniqueIdentifier": "2.26",
+    "locationName": "Mirpur-2"
+  },
+  {
+    "uniqueIdentifier": "2.27",
+    "locationName": "Mirpur-10"
+  },
+  {
+    "uniqueIdentifier": "2.28",
+    "locationName": "Pallabi"
+  },
+  {
+    "uniqueIdentifier": "2.29",
+    "locationName": "Gabtoli"
+  },
+  {
+    "uniqueIdentifier": "2.30",
+    "locationName": "Kallyanpur"
+  },
+  {
+    "uniqueIdentifier": "3.1",
+    "locationName": "Farmgate"
+  },
+  {
+    "uniqueIdentifier": "3.2",
+    "locationName": "Tejgaon"
+  },
+  {
+    "uniqueIdentifier": "3.3",
+    "locationName": "Panthapath"
+  },
+  {
+    "uniqueIdentifier": "3.4",
+    "locationName": "Green Road"
+  },
+  {
+    "uniqueIdentifier": "3.5",
+    "locationName": "Karwan Bazar"
+  },
+  {
+    "uniqueIdentifier": "3.6",
+    "locationName": "Begum Rokeya Sarani"
+  },
+  {
+    "uniqueIdentifier": "3.7",
+    "locationName": "Agargaon"
+  },
+  {
+    "uniqueIdentifier": "3.8",
+    "locationName": "Bijoy Sarani"
+  },
+  {
+    "uniqueIdentifier": "3.9",
+    "locationName": "Shyamoli"
+  },
+  {
+    "uniqueIdentifier": "3.10",
+    "locationName": "Adabor"
+  },
+  {
+    "uniqueIdentifier": "3.11",
+    "locationName": "Kawran Bazar"
+  },
+  {
+    "uniqueIdentifier": "3.12",
+    "locationName": "Taltola"
+  },
+  {
+    "uniqueIdentifier": "3.13",
+    "locationName": "Shankar"
+  },
+  {
+    "uniqueIdentifier": "3.14",
+    "locationName": "Star Cineplex"
+  },
+  {
+    "uniqueIdentifier": "3.15",
+    "locationName": "Rabindra Sarobar"
+  },
+  {
+    "uniqueIdentifier": "3.16",
+    "locationName": "Bangladesh National Zoo"
+  },
+  {
+    "uniqueIdentifier": "3.17",
+    "locationName": "Dhaka University"
+  },
+  {
+    "uniqueIdentifier": "3.18",
+    "locationName": "Curzon Hall"
+  },
+  {
+    "uniqueIdentifier": "3.19",
+    "locationName": "TSC"
+  },
+  {
+    "uniqueIdentifier": "3.20",
+    "locationName": "Central Shaheed Minar"
+  },
+  {
+    "uniqueIdentifier": "3.21",
+    "locationName": "Suhrawardy Udyan"
+  },
+  {
+    "uniqueIdentifier": "3.22",
+    "locationName": "Ramna Park"
+  },
+  {
+    "uniqueIdentifier": "3.23",
+    "locationName": "Shishu Park"
+  },
+  {
+    "uniqueIdentifier": "3.24",
+    "locationName": "Bangabandhu Memorial Museum"
+  },
+  {
+    "uniqueIdentifier": "3.25",
+    "locationName": "National Museum"
+  },
+  {
+    "uniqueIdentifier": "3.26",
+    "locationName": "National Parliament House"
+  },
+  {
+    "uniqueIdentifier": "3.27",
+    "locationName": "Mausoleum of Ziaur Rahman"
+  },
+  {
+    "uniqueIdentifier": "3.28",
+    "locationName": "Lalbagh Fort"
+  },
+  {
+    "uniqueIdentifier": "3.29",
+    "locationName": "Ahsan Manzil"
+  },
+  {
+    "uniqueIdentifier": "3.30",
+    "locationName": "Armenian Church"
+  },
+  {
+    "uniqueIdentifier": "4.1",
+    "locationName": "Sadarghat"
+  },
+  {
+    "uniqueIdentifier": "4.2",
+    "locationName": "Buriganga River"
+  },
+  {
+    "uniqueIdentifier": "4.
+
+3",
+    "locationName": "Baldha Garden"
+  },
+  {
+    "uniqueIdentifier": "4.4",
+    "locationName": "Bashabo"
+  },
+  {
+    "uniqueIdentifier": "4.5",
+    "locationName": "Mugda"
+  },
+  {
+    "uniqueIdentifier": "4.6",
+    "locationName": "Kamrangirchar"
+  },
+  {
+    "uniqueIdentifier": "4.7",
+    "locationName": "Jatrabari"
+  },
+  {
+    "uniqueIdentifier": "4.8",
+    "locationName": "Demra"
+  },
+  {
+    "uniqueIdentifier": "4.9",
+    "locationName": "Kadamtali"
+  },
+  {
+    "uniqueIdentifier": "4.10",
+    "locationName": "Shyampur"
+  },
+  {
+    "uniqueIdentifier": "4.11",
+    "locationName": "Nawabganj"
+  },
+  {
+    "uniqueIdentifier": "4.12",
+    "locationName": "Keraniganj"
+  },
+  {
+    "uniqueIdentifier": "4.13",
+    "locationName": "Gendaria"
+  },
+  {
+    "uniqueIdentifier": "4.14",
+    "locationName": "Wari"
+  },
+  {
+    "uniqueIdentifier": "4.15",
+    "locationName": "Dholaikhal"
+  },
+  {
+    "uniqueIdentifier": "4.16",
+    "locationName": "Tipu Sultan Road"
+  },
+  {
+    "uniqueIdentifier": "4.17",
+    "locationName": "Nazira Bazar"
+  },
+  {
+    "uniqueIdentifier": "4.18",
+    "locationName": "Lalbagh"
+  },
+  {
+    "uniqueIdentifier": "4.19",
+    "locationName": "Chawkbazar"
+  },
+  {
+    "uniqueIdentifier": "4.20",
+    "locationName": "Bangshal"
+  },
+  {
+    "uniqueIdentifier": "4.21",
+    "locationName": "Naya Bazar"
+  },
+  {
+    "uniqueIdentifier": "4.22",
+    "locationName": "Islampur"
+  },
+  {
+    "uniqueIdentifier": "4.23",
+    "locationName": "Sutrapur"
+  },
+  {
+    "uniqueIdentifier": "4.24",
+    "locationName": "Kamalapur Railway Station"
+  },
+  {
+    "uniqueIdentifier": "4.25",
+    "locationName": "Postogola"
+  },
+  {
+    "uniqueIdentifier": "4.26",
+    "locationName": "Pagla"
+  },
+  {
+    "uniqueIdentifier": "4.27",
+    "locationName": "Narayanganj"
+  },
+  {
+    "uniqueIdentifier": "4.28",
+    "locationName": "Tongi"
+  },
+  {
+    "uniqueIdentifier": "4.29",
+    "locationName": "Gazipur"
+  },
+  {
+    "uniqueIdentifier": "4.30",
+    "locationName": "Savar"
+  },
+  {
+    "uniqueIdentifier": "5.1",
+    "locationName": "Ashulia"
+  },
+  {
+    "uniqueIdentifier": "5.2",
+    "locationName": "Nobinagar"
+  },
+  {
+    "uniqueIdentifier": "5.3",
+    "locationName": "Hemayetpur"
+  },
+  {
+    "uniqueIdentifier": "5.4",
+    "locationName": "Dhamrai"
+  },
+  {
+    "uniqueIdentifier": "5.5",
+    "locationName": "Manikganj"
+  },
+  {
+    "uniqueIdentifier": "5.6",
+    "locationName": "Tongi Diversion Road"
+  },
+  {
+    "uniqueIdentifier": "5.7",
+    "locationName": "Banani Bridge"
+  },
+  {
+    "uniqueIdentifier": "5.8",
+    "locationName": "Khilgaon Flyover"
+  },
+  {
+    "uniqueIdentifier": "5.9",
+    "locationName": "Hatirjheel Bridge"
+  },
+  {
+    "uniqueIdentifier": "5.10",
+    "locationName": "Satrasta"
+  },
+  {
+    "uniqueIdentifier": "5.11",
+    "locationName": "FDC"
+  },
+  {
+    "uniqueIdentifier": "5.12",
+    "locationName": "Sonargaon Hotel"
+  },
+  {
+    "uniqueIdentifier": "5.13",
+    "locationName": "InterContinental Dhaka"
+  },
+  {
+    "uniqueIdentifier": "5.14",
+    "locationName": "Westin Dhaka"
+  },
+  {
+    "uniqueIdentifier": "5.15",
+    "locationName": "Radisson Blu Dhaka"
+  },
+  {
+    "uniqueIdentifier": "5.16",
+    "locationName": "Pan Pacific Sonargaon"
+  },
+  {
+    "uniqueIdentifier": "5.17",
+    "locationName": "Le Méridien Dhaka"
+  },
+  {
+    "uniqueIdentifier": "5.18",
+    "locationName": "Lake Shore Hotel"
+  },
+  {
+    "uniqueIdentifier": "5.19",
+    "locationName": "Amari Dhaka"
+  },
+  {
+    "uniqueIdentifier": "5.20",
+    "locationName": "La Vinci Hotel"
+  },
+  {
+    "uniqueIdentifier": "5.21",
+    "locationName": "Dhaka Regency Hotel"
+  },
+  {
+    "uniqueIdentifier": "5.22",
+    "locationName": "Gulshan Club"
+  },
+  {
+    "uniqueIdentifier": "5.23",
+    "locationName": "Army Golf Club"
+  },
+  {
+    "uniqueIdentifier": "5.24",
+    "locationName": "Kurmitola Golf Club"
+  },
+  {
+    "uniqueIdentifier": "5.25",
+    "locationName": "Dhaka Boat Club"
+  },
+  {
+    "uniqueIdentifier": "5.26",
+    "locationName": "Dhaka Club"
+  },
+  {
+    "uniqueIdentifier": "5.27",
+    "locationName": "Banani Society"
+  },
+  {
+    "uniqueIdentifier": "5.28",
+    "locationName": "Gulshan Society"
+  },
+  {
+    "uniqueIdentifier": "5.29",
+    "locationName": "Baridhara Society"
+  },
+  {
+    "uniqueIdentifier": "5.30",
+    "locationName": "Uttara Club"
+  },
+  {
+    "uniqueIdentifier": "6.1",
+    "locationName": "Fantasy Kingdom"
+  },
+  {
+    "uniqueIdentifier": "6.2",
+    "locationName": "Nandan Park"
+  },
+  {
+    "uniqueIdentifier": "6.3",
+    "locationName": "Jamuna Resort"
+  },
+  {
+    "uniqueIdentifier": "6.4",
+    "locationName": "Wonderland"
+  },
+  {
+    "uniqueIdentifier": "6.5",
+    "locationName": "Ruposhi Bangla Hotel"
+  },
+  {
+    "uniqueIdentifier": "6.6",
+    "locationName": "Eastern Plaza"
+  },
+  {
+    "uniqueIdentifier": "6.7",
+    "locationName": "Basundhara City"
+  },
+  {
+    "uniqueIdentifier": "6.8",
+    "locationName": "Shyamoli Square"
+  },
+  {
+    "uniqueIdentifier": "6.9",
+    "locationName": "Mouchak Market"
+  },
+  {
+    "uniqueIdentifier": "6.10",
+    "locationName": "Baitul Mukarram"
+  },
+  {
+    "uniqueIdentifier": "6.11",
+    "locationName": "New Market"
+  },
+  {
+    "uniqueIdentifier": "6.12",
+    "locationName": "Chandrima Udyan"
+  },
+  {
+    "uniqueIdentifier": "6.13",
+    "locationName": "Ashkona Hajj Camp"
+  },
+  {
+    "uniqueIdentifier": "6.14",
+    "locationName": "Bashundhara Convention Center"
+  },
+  {
+    "uniqueIdentifier": "6.15",
+    "locationName": "ICCB"
+  },
+  {
+    "uniqueIdentifier": "6.16",
+    "locationName": "Bangabandhu International Conference Center"
+  },
+  {
+    "uniqueIdentifier": "6.17",
+    "locationName": "China-Bangladesh Friendship Conference Center"
+  },
+  {
+    "uniqueIdentifier": "6.18",
+    "locationName": "National Art Gallery"
+  },
+  {
+    "uniqueIdentifier": "6.19",
+    "locationName": "Alliance Francaise Dhaka"
+  },
+  {
+    "uniqueIdentifier": "6.20",
+    "locationName": "Russian Cultural Center"
+  },
+  {
+    "uniqueIdentifier": "6.21",
+    "locationName": "British Council"
+  },
+  {
+    "uniqueIdentifier": "6.22",
+    "locationName": "German Cultural Center"
+  },
+  {
+    "uniqueIdentifier": "6.23",
+    "locationName": "American Center"
+  },
+  {
+    "uniqueIdentifier": "6.24",
+    "locationName": "International Club"
+  },
+  {
+    "uniqueIdentifier": "6.25",
+    "locationName": "Canadian Club"
+  },
+  {
+    "uniqueIdentifier": "6.26",
+    "location
+
+Name": "National Library"
+  },
+  {
+    "uniqueIdentifier": "6.27",
+    "locationName": "National Archives"
+  },
+  {
+    "uniqueIdentifier": "6.28",
+    "locationName": "Sultan's Dine"
+  },
+  {
+    "uniqueIdentifier": "6.29",
+    "locationName": "Nando's"
+  },
+  {
+    "uniqueIdentifier": "6.30",
+    "locationName": "KFC"
+  },
+  {
+    "uniqueIdentifier": "7.1",
+    "locationName": "Burger King"
+  },
+  {
+    "uniqueIdentifier": "7.2",
+    "locationName": "Pizza Hut"
+  },
+  {
+    "uniqueIdentifier": "7.3",
+    "locationName": "Gloria Jean's Coffees"
+  },
+  {
+    "uniqueIdentifier": "7.4",
+    "locationName": "Starbucks"
+  },
+  {
+    "uniqueIdentifier": "7.5",
+    "locationName": "Tom N Toms Coffee"
+  },
+  {
+    "uniqueIdentifier": "7.6",
+    "locationName": "Bamboo Shoot"
+  },
+  {
+    "uniqueIdentifier": "7.7",
+    "locationName": "Spaghetti Jazz"
+  },
+  {
+    "uniqueIdentifier": "7.8",
+    "locationName": "Meridian Hotel"
+  },
+  {
+    "uniqueIdentifier": "7.9",
+    "locationName": "Golden Tulip"
+  },
+  {
+    "uniqueIdentifier": "7.10",
+    "locationName": "Innotel Hotel"
+  },
+  {
+    "uniqueIdentifier": "7.11",
+    "locationName": "The Olives"
+  },
+  {
+    "uniqueIdentifier": "7.12",
+    "locationName": "Ascott Palace"
+  },
+  {
+    "uniqueIdentifier": "7.13",
+    "locationName": "Platinum Suites"
+  },
+  {
+    "uniqueIdentifier": "7.14",
+    "locationName": "Rigs Inn"
+  },
+  {
+    "uniqueIdentifier": "7.15",
+    "locationName": "Hotel Lake Castle"
+  },
+  {
+    "uniqueIdentifier": "7.16",
+    "locationName": "Hotel Swiss Park"
+  },
+  {
+    "uniqueIdentifier": "7.17",
+    "locationName": "Hotel Sarina"
+  },
+  {
+    "uniqueIdentifier": "7.18",
+    "locationName": "Hotel de Crystal Crown"
+  },
+  {
+    "uniqueIdentifier": "7.19",
+    "locationName": "Hotel Victory"
+  },
+  {
+    "uniqueIdentifier": "7.20",
+    "locationName": "Hotel 71"
+  },
+  {
+    "uniqueIdentifier": "7.21",
+    "locationName": "FARS Hotel & Resorts"
+  },
+  {
+    "uniqueIdentifier": "7.22",
+    "locationName": "Orchard Suites"
+  },
+  {
+    "uniqueIdentifier": "7.23",
+    "locationName": "Best Western Plus Maple Leaf"
+  },
+  {
+    "uniqueIdentifier": "7.24",
+    "locationName": "Hotel Ornate"
+  },
+  {
+    "uniqueIdentifier": "7.25",
+    "locationName": "Hotel Civic Inn"
+  },
+  {
+    "uniqueIdentifier": "7.26",
+    "locationName": "Asia Hotel & Resorts"
+  },
+  {
+    "uniqueIdentifier": "7.27",
+    "locationName": "The Way Dhaka"
+  },
+  {
+    "uniqueIdentifier": "7.28",
+    "locationName": "Nascent Gardenia"
+  },
+  {
+    "uniqueIdentifier": "7.29",
+    "locationName": "Hotel Rose Garden"
+  },
+  {
+    "uniqueIdentifier": "7.30",
+    "locationName": "Hotel Sundarban"
+  },
+  {
+    "uniqueIdentifier": "8.1",
+    "locationName": "Rajuk Uttara Model College"
+  },
+  {
+    "uniqueIdentifier": "8.2",
+    "locationName": "Viqarunnisa Noon School and College"
+  },
+  {
+    "uniqueIdentifier": "8.3",
+    "locationName": "Holy Cross College"
+  },
+  {
+    "uniqueIdentifier": "8.4",
+    "locationName": "Dhaka College"
+  },
+  {
+    "uniqueIdentifier": "8.5",
+    "locationName": "Eden Mohila College"
+  },
+  {
+    "uniqueIdentifier": "8.6",
+    "locationName": "Government Titumir College"
+  },
+  {
+    "uniqueIdentifier": "8.7",
+    "locationName": "Dhaka City College"
+  },
+  {
+    "uniqueIdentifier": "8.8",
+    "locationName": "Dhaka Commerce College"
+  },
+  {
+    "uniqueIdentifier": "8.9",
+    "locationName": "Notre Dame College"
+  },
+  {
+    "uniqueIdentifier": "8.10",
+    "locationName": "Dhaka University of Engineering & Technology"
+  },
+  {
+    "uniqueIdentifier": "8.11",
+    "locationName": "BRAC University"
+  },
+  {
+    "uniqueIdentifier": "8.12",
+    "locationName": "North South University"
+  },
+  {
+    "uniqueIdentifier": "8.13",
+    "locationName": "Independent University"
+  },
+  {
+    "uniqueIdentifier": "8.14",
+    "locationName": "East West University"
+  },
+  {
+    "uniqueIdentifier": "8.15",
+    "locationName": "United International University"
+  },
+  {
+    "uniqueIdentifier": "8.16",
+    "locationName": "American International University-Bangladesh"
+  },
+  {
+    "uniqueIdentifier": "8.17",
+    "locationName": "University of Dhaka"
+  },
+  {
+    "uniqueIdentifier": "8.18",
+    "locationName": "Bangladesh University of Engineering and Technology"
+  },
+  {
+    "uniqueIdentifier": "8.19",
+    "locationName": "Bangladesh Agricultural University"
+  },
+  {
+    "uniqueIdentifier": "8.20",
+    "locationName": "North South University"
+  },
+  {
+    "uniqueIdentifier": "8.21",
+    "locationName": "Bangladesh University of Professionals"
+  },
+  {
+    "uniqueIdentifier": "8.22",
+    "locationName": "Daffodil International University"
+  },
+  {
+    "uniqueIdentifier": "8.23",
+    "locationName": "Stamford University Bangladesh"
+  },
+  {
+    "uniqueIdentifier": "8.24",
+    "locationName": "ASA University Bangladesh"
+  },
+  {
+    "uniqueIdentifier": "8.25",
+    "locationName": "University of Liberal Arts Bangladesh"
+  },
+  {
+    "uniqueIdentifier": "8.26",
+    "locationName": "Northern University Bangladesh"
+  },
+  {
+    "uniqueIdentifier": "8.27",
+    "locationName": "Green University of Bangladesh"
+  },
+  {
+    "uniqueIdentifier": "8.28",
+    "locationName": "Southeast University"
+  },
+  {
+    "uniqueIdentifier": "8.29",
+    "locationName": "Primeasia University"
+  },
+  {
+    "uniqueIdentifier": "8.30",
+    "locationName": "Eastern University"
+  },
+  {
+    "uniqueIdentifier": "9.1",
+    "locationName": "Aarong"
+  },
+  {
+    "uniqueIdentifier": "9.2",
+    "locationName": "Deshal"
+  },
+  {
+    "uniqueIdentifier": "9.3",
+    "locationName": "Jatra"
+  },
+  {
+    "uniqueIdentifier": "9.4",
+    "locationName": "Anjan's"
+  },
+  {
+    "uniqueIdentifier": "9.5",
+    "locationName": "Banglar Mela"
+  },
+  {
+    "uniqueIdentifier": "9.6",
+    "locationName": "Kay Kraft"
+  },
+  {
+    "uniqueIdentifier": "9.7",
+    "locationName": "Bibiana"
+  },
+  {
+    "uniqueIdentifier": "9.8",
+    "locationName": "Nokshikatha"
+  },
+  {
+    "uniqueIdentifier": "9.9",
+    "locationName": "Rang"
+  },
+  {
+    "uniqueIdentifier": "9.10",
+    "locationName": "Shadakalo"
+  },
+  {
+    "uniqueIdentifier": "9.11",
+    "locationName": "Grameen UNIQLO"
+  },
+  {
+    "uniqueIdentifier": "9.12",
+    "locationName": "Yellow"
+  },
+  {
+    "uniqueIdentifier": "9.13",
+    "locationName": "Cats Eye"
+  },
+  {
+    "uniqueIdentifier": "9.14",
+    "locationName": "Ecstasy"
+  },
+  {
+    "uniqueIdentifier": "9.15",
+    "locationName": "Aangan"
+  },
+  {
+    "uniqueIdentifier": "9.16",
+    "locationName": "Infinity"
+  },
+  {
+    "uniqueIdentifier": "9.17",
+    "locationName": "Rina Latif"
+  },
+  {
+    "uniqueIdentifier": "9.18",
+    "locationName": "Aranya"
+  },
+  {
+    "uniqueIdentifier": "9.19",
+    "locationName": "Tangail Saree Kutir"
+  },
+  {
+    "
+
+uniqueIdentifier": "9.20",
+    "locationName": "Tangail Tant Kutir"
+  },
+  {
+    "uniqueIdentifier": "9.21",
+    "locationName": "Sada Kalo"
+  },
+  {
+    "uniqueIdentifier": "9.22",
+    "locationName": "Kumudini"
+  },
+  {
+    "uniqueIdentifier": "9.23",
+    "locationName": "Bangladesh Handloom Board"
+  },
+  {
+    "uniqueIdentifier": "9.24",
+    "locationName": "Bangladesh Jute Research Institute"
+  },
+  {
+    "uniqueIdentifier": "9.25",
+    "locationName": "Bangladesh Small and Cottage Industries Corporation"
+  },
+  {
+    "uniqueIdentifier": "9.26",
+    "locationName": "Bangladesh Export Processing Zones Authority"
+  },
+  {
+    "uniqueIdentifier": "9.27",
+    "locationName": "Bangladesh Economic Zones Authority"
+  },
+  {
+    "uniqueIdentifier": "9.28",
+    "locationName": "Bangladesh Investment Development Authority"
+  },
+  {
+    "uniqueIdentifier": "9.29",
+    "locationName": "Bangladesh Bank"
+  },
+  {
+    "uniqueIdentifier": "9.30",
+    "locationName": "Prime Minister's Office"
+  },
+  {
+    "uniqueIdentifier": "10.1",
+    "locationName": "Bangladesh Secretariat"
+  },
+  {
+    "uniqueIdentifier": "10.2",
+    "locationName": "National Parliament House"
+  },
+  {
+    "uniqueIdentifier": "10.3",
+    "locationName": "Bangladesh Supreme Court"
+  },
+  {
+    "uniqueIdentifier": "10.4",
+    "locationName": "Prime Minister's Office"
+  },
+  {
+    "uniqueIdentifier": "10.5",
+    "locationName": "Bangabhaban"
+  },
+  {
+    "uniqueIdentifier": "10.6",
+    "locationName": "Gono Bhaban"
+  },
+  {
+    "uniqueIdentifier": "10.7",
+    "locationName": "Police Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.8",
+    "locationName": "RAB Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.9",
+    "locationName": "BGB Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.10",
+    "locationName": "Fire Service Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.11",
+    "locationName": "DGFI Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.12",
+    "locationName": "NSI Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.13",
+    "locationName": "DMP Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.14",
+    "locationName": "CID Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.15",
+    "locationName": "SB Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.16",
+    "locationName": "Special Branch Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.17",
+    "locationName": "Intelligence Branch Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.18",
+    "locationName": "National Security Intelligence Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.19",
+    "locationName": "Directorate General of Forces Intelligence Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.20",
+    "locationName": "Bangladesh Army Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.21",
+    "locationName": "Bangladesh Navy Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.22",
+    "locationName": "Bangladesh Air Force Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.23",
+    "locationName": "Bangladesh Coast Guard Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.24",
+    "locationName": "Border Guard Bangladesh Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.25",
+    "locationName": "Armed Police Battalion Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.26",
+    "locationName": "Rapid Action Battalion Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.27",
+    "locationName": "Dhaka Metropolitan Police Headquarters"
+  },
+  {
+    "uniqueIdentifier": "10.28",
+    "locationName": "Dhaka North City Corporation"
+  },
+  {
+    "uniqueIdentifier": "10.29",
+    "locationName": "Dhaka South City Corporation"
+  },
+  {
+    "uniqueIdentifier": "11.1",
+    "locationName": "Shishu Park"
+  },
+  {
+    "uniqueIdentifier": "11.2",
+    "locationName": "Suhrawardy Udyan"
+  },
+  {
+    "uniqueIdentifier": "11.3",
+    "locationName": "Ramna Park"
+  },
+  {
+    "uniqueIdentifier": "11.4",
+    "locationName": "Osmani Udyan"
+  },
+  {
+    "uniqueIdentifier": "11.5",
+    "locationName": "National Botanical Garden"
+  },
+  {
+    "uniqueIdentifier": "11.6",
+    "locationName": "Bangabandhu Safari Park"
+  },
+  {
+    "uniqueIdentifier": "11.7",
+    "locationName": "Baldha Garden"
+  },
+  {
+    "uniqueIdentifier": "11.8",
+    "locationName": "Curzon Hall"
+  },
+  {
+    "uniqueIdentifier": "11.9",
+    "locationName": "Ahsan Manzil"
+  },
+  {
+    "uniqueIdentifier": "11.10",
+    "locationName": "Lalbagh Fort"
+  },
+  {
+    "uniqueIdentifier": "11.11",
+    "locationName": "Star Mosque"
+  },
+  {
+    "uniqueIdentifier": "11.12",
+    "locationName": "Baitul Mukarram Mosque"
+  },
+  {
+    "uniqueIdentifier": "11.13",
+    "locationName": "Bangladesh National Museum"
+  },
+  {
+    "uniqueIdentifier": "11.14",
+    "locationName": "Liberation War Museum"
+  },
+  {
+    "uniqueIdentifier": "11.15",
+    "locationName": "Martyred Intellectuals Memorial"
+  },
+  {
+    "uniqueIdentifier": "11.16",
+    "locationName": "Language Movement Museum"
+  },
+  {
+    "uniqueIdentifier": "11.17",
+    "locationName": "Museum of Independence"
+  },
+  {
+    "uniqueIdentifier": "11.18",
+    "locationName": "National Martyrs' Memorial"
+  },
+  {
+    "uniqueIdentifier": "11.19",
+    "locationName": "Jatiyo Sangsad Bhaban"
+  },
+  {
+    "uniqueIdentifier": "11.20",
+    "locationName": "Taj Mahal Bangladesh"
+  },
+  {
+    "uniqueIdentifier": "11.21",
+    "locationName": "Padma Bridge"
+  },
+  {
+    "uniqueIdentifier": "11.22",
+    "locationName": "Baliati Palace"
+  },
+  {
+    "uniqueIdentifier": "11.23",
+    "locationName": "Natore Rajbari"
+  },
+  {
+    "uniqueIdentifier": "11.24",
+    "locationName": "Puthia Rajbari"
+  },
+  {
+    "uniqueIdentifier": "11.25",
+    "locationName": "Dhanbari Nawab Palace"
+  },
+  {
+    "uniqueIdentifier": "11.26",
+    "locationName": "Shilaidaha Kuthibari"
+  },
+  {
+    "uniqueIdentifier": "11.27",
+    "locationName": "Natore Palace"
+  },
+  {
+    "uniqueIdentifier": "11.28",
+    "locationName": "Mahasthangarh"
+  },
+  {
+    "uniqueIdentifier": "11.29",
+    "locationName": "Ahsan Manzil Museum"
+  },
+  {
+    "uniqueIdentifier": "11.30",
+    "locationName": "Paharpur"
+  },
+  {
+    "uniqueIdentifier": "11.31",
+    "locationName": "Sonargaon"
+  },
+  {
+    "uniqueIdentifier": "11.32",
+    "locationName": "Mainamati"
+  },
+  {
+    "uniqueIdentifier": "11.33",
+    "locationName": "Mahastangarth"
+  },
+  {
+    "uniqueIdentifier": "11.34",
+    "locationName": "Shat Gombuj Masjid"
+  },
+  {
+    "uniqueIdentifier": "11.35",
+    "locationName": "Sixty Dome Mosque"
+  },
+  {
+    "uniqueIdentifier": "11.36",
+    "locationName": "Han's Cottage"
+  },
+  {
+    "uniqueIdentifier": "11.37",
+    "locationName": "Dhanmondi Lake"
+  },
+  {
+    "uniqueIdentifier": "11.38",
+    "locationName": "Banani Lake"
+  },
+  {
+    "uniqueIdentifier": "11.39",
+    "locationName": "Hatirjheel Lake"
+  },
+  {
+    "uniqueIdentifier": "11.40",
+    "locationName": "Gulshan Lake"
+  },
+  {
+    "uniqueIdentifier": "11.41",
+    "locationName": "Uttara Lake"
+  },
+  {
+    "uniqueIdentifier": "11.42",
+    "locationName": "Ramna Lake"
+  },
+  {
+    "uniqueIdentifier": "11.43",
+    "locationName": "Bashundhara Lake"
+  },
+  {
+    "uniqueIdentifier": "11.44",
+    "locationName": "Digiworld Lake"
+  },
+  {
+    "uniqueIdentifier": "11.45",
+    "locationName": "Nikunja Lake"
+  },
+  {
+    "uniqueIdentifier": "11.46",
+    "locationName": "Suhrawardy Lake"
+  },
+  {
+    "uniqueIdentifier": "11.47",
+    "locationName": "Joynal Lake"
+  },
+  {
+    "uniqueIdentifier": "11.48",
+    "locationName": "National Parliament Lake"
+  },
+  {
+    "uniqueIdentifier": "11.49",
+    "locationName": "Bangabandhu Sheikh Mujib Safari Park"
+  },
+  {
+    "uniqueIdentifier": "11.50",
+    "locationName": "Chandpur Park"
+  },
+  {
+    "uniqueIdentifier": "11.51",
+    "locationName": "Rajuk Jhilmil Residential Park"
+  },
+  {
+    "uniqueIdentifier": "11.52",
+    "locationName": "Jatrabari Park"
+  },
+  {
+    "uniqueIdentifier": "11.53",
+    "locationName": "Mirpur Zoo"
+  },
+  {
+    "uniqueIdentifier": "11.54",
+    "locationName": "Shahid Zia Shishu Park"
+  },
+  {
+    "uniqueIdentifier": "11.55",
+    "locationName": "Fantasy Kingdom"
+  },
+  {
+    "uniqueIdentifier": "11.56",
+    "locationName": "Nandan Park"
+  },
+  {
+    "uniqueIdentifier": "11.57",
+    "locationName": "Wonderland Park"
+  },
+  {
+    "uniqueIdentifier": "11.58",
+    "locationName": "Foy's Lake Amusement World"
+  },
+  {
+    "uniqueIdentifier": "11.59",
+    "locationName": "Sea World"
+  },
+  {
+    "uniqueIdentifier": "11.60",
+    "locationName": "Water Kingdom"
+  },
+  {
+    "uniqueIdentifier": "11.61",
+    "locationName": "Fantasy Island"
+  },
+  {
+    "uniqueIdentifier": "11.62",
+    "locationName": "Deshantor Park"
+  },
+  {
+    "uniqueIdentifier": "11.63",
+    "locationName": "Bashundhara City"
+  },
+  {
+    "uniqueIdentifier": "11.64",
+    "locationName": "Jamuna Future Park"
+  },
+  {
+    "uniqueIdentifier": "11.65",
+    "locationName": "Shimanto Square"
+  },
+  {
+    "uniqueIdentifier": "11.66",
+    "locationName": "Gulshan Pink City"
+  },
+  {
+    "uniqueIdentifier": "11.67",
+    "locationName": "Mouchak Market"
+  },
+  {
+    "uniqueIdentifier": "11.68",
+    "locationName": "New Market"
+  },
+  {
+    "uniqueIdentifier": "11.69",
+    "locationName": "Elephant Road"
+  },
+  {
+    "uniqueIdentifier": "11.70",
+    "locationName": "Banga Bazar"
+  },
+  {
+    "uniqueIdentifier": "11.71",
+    "locationName": "Bashundhara City Mall"
+  },
+  {
+    "uniqueIdentifier": "11.72",
+    "locationName": "Pink City Shopping Mall"
+  },
+  {
+    "uniqueIdentifier": "11.73",
+    "locationName": "Jamuna Future Park Mall"
+  },
+  {
+    "uniqueIdentifier": "11.74",
+    "locationName": "Dhaka New Market"
+  },
+  {
+    "uniqueIdentifier": "11.75",
+    "locationName": "Mouchak Market Shopping Mall"
+  },
+  {
+    "uniqueIdentifier": "11.76",
+    "locationName": "Chawk Bazar"
+  },
+  {
+    "uniqueIdentifier": "11.77",
+    "locationName": "Gausia Market"
+  },
+  {
+    "uniqueIdentifier": "11.78",
+    "locationName": "Nur Mansion Shopping Complex"
+  },
+  {
+    "uniqueIdentifier": "11.79",
+    "locationName": "Taltola Market"
+  },
+  {
+    "uniqueIdentifier": "11.80",
+    "locationName": "Malibagh Market"
+  },
+  {
+    "uniqueIdentifier": "11.81",
+    "locationName": "Polwel Carnation Shopping Mall"
+  },
+  {
+    "uniqueIdentifier": "11.82",
+    "locationName": "Twin Tower Concord Shopping Complex"
+  },
+  {
+    "uniqueIdentifier": "11.83",
+    "locationName": "Dhaka Trade Centre"
+  },
+  {
+    "uniqueIdentifier": "11.84",
+    "locationName": "Eastern Plaza"
+  },
+  {
+    "uniqueIdentifier": "11.85",
+    "locationName": "Rapa Plaza"
+  },
+  {
+    "uniqueIdentifier": "11.86",
+    "locationName": "Chandrima Udyan"
+  },
+  {
+    "uniqueIdentifier": "11.87",
+    "locationName": "Baldha Garden Park"
+  },
+  {
+    "uniqueIdentifier": "11.88",
+    "locationName": "National Botanical Garden Park"
+  },
+  {
+    "uniqueIdentifier": "11.89",
+    "locationName": "Tajhat Palace"
+  },
+  {
+    "uniqueIdentifier": "11.90",
+    "locationName": "Sagordari"
+  },
+  {
+    "uniqueIdentifier": "11.91",
+    "locationName": "Kantanagar Temple"
+  },
+  {
+    "uniqueIdentifier": "11.92",
+    "locationName": "Bagha Mosque"
+  },
+  {
+    "uniqueIdentifier": "11.93",
+    "locationName": "Vawal National Park"
+  },
+  {
+    "uniqueIdentifier": "11.137",
+    "locationName": "Nijhum Dwip"
+  },
+  {
+    "uniqueIdentifier": "11.138",
+    "locationName": "Dublar Char National Park"
+  },
+  {
+    "uniqueIdentifier": "11.139",
+    "locationName": "Char Kukri Mukri National Park"
+  },
+  {
+    "uniqueIdentifier": "11.140",
+    "locationName": "Char Gazi National Park"
+  },
+  {
+    "uniqueIdentifier": "11.141",
+    "locationName": "Dhal Char National Park"
+  },
+  {
+    "uniqueIdentifier": "11.142",
+    "locationName": "Jahiruddin National Park"
+  },
+  {
+    "uniqueIdentifier": "11.143",
+    "locationName": "Bangladesh Jute Research Institute"
+  },
+  {
+    "uniqueIdentifier": "11.144",
+    "locationName": "Bangladesh Handloom Board"
+  },
+  {
+    "uniqueIdentifier": "11.145",
+    "locationName": "Bangladesh Small and Cottage Industries Corporation"
+  },
+  {
+    "uniqueIdentifier": "11.146",
+    "locationName": "Bangladesh Export Processing Zones Authority"
+  },
+  {
+    "uniqueIdentifier": "11.147",
+    "locationName": "Bangladesh Economic Zones Authority"
+  },
+  {
+    "uniqueIdentifier": "11.148",
+    "locationName": "Bangladesh Investment Development Authority"
+  },
+  {
+    "uniqueIdentifier": "11.149",
+    "locationName": "Bangladesh Bank"
+  },
+  {
+    "uniqueIdentifier": "11.150",
+    "locationName": "Prime Minister's Office"
+  },
+  {
+    "uniqueIdentifier": "12.1",
+    "locationName": "Bangladesh Secretariat"
+  },
+  {
+    "uniqueIdentifier": "12.2",
+    "locationName": "National Parliament House"
+  },
+  {
+    "uniqueIdentifier": "12.3",
+    "locationName": "Bangladesh Supreme Court"
+  },
+  {
+    "uniqueIdentifier": "12.4",
+    "locationName": "Prime Minister's Office"
+  },
+  {
+    "uniqueIdentifier": "12.5",
+    "locationName": "Bangabhaban"
+  },
+  {
+    "uniqueIdentifier": "12.6",
+    "locationName": "Gono Bhaban"
+  },
+  {
+    "uniqueIdentifier": "12.7",
+    "locationName": "Police Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.8",
+    "locationName": "RAB Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.9",
+    "locationName": "BGB Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.10",
+    "locationName": "Fire Service Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.11",
+    "locationName": "DGFI Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.12",
+    "locationName": "NSI Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.13",
+    "locationName": "DMP Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.14",
+    "locationName": "CID Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.15",
+    "locationName": "SB Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.16",
+    "locationName": "Special Branch Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.17",
+    "locationName": "Intelligence Branch Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.18",
+    "locationName": "National Security Intelligence Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.19",
+    "locationName": "Directorate General of Forces Intelligence Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.20",
+    "locationName": "Bangladesh Army Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.21",
+    "locationName": "Bangladesh Navy Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.22",
+    "locationName": "Bangladesh Air Force Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.23",
+    "locationName": "Bangladesh Coast Guard Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.24",
+    "locationName": "Border Guard Bangladesh Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.25",
+    "locationName": "Armed Police Battalion Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.26",
+    "locationName": "Rapid Action Battalion Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.27",
+    "locationName": "Dhaka Metropolitan Police Headquarters"
+  },
+  {
+    "uniqueIdentifier": "12.28",
+    "locationName": "Dhaka North City Corporation"
+  },
+  {
+    "uniqueIdentifier": "12.29",
+    "locationName": "Dhaka South City Corporation"
   }
 ]
