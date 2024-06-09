@@ -3,21 +3,44 @@ import httpStatus from "http-status";
 import { UserService } from "./user.service";
 
 const find = async (req: Request, res: Response) => {
+  // const query = req.
+  
+  const { page = 1, limit = 10, search = "" } = req.query;
+
   try {
-    const result = await UserService.find();
+    const result = await UserService.find(Number(page), Number(limit), search as string);
     return res.status(httpStatus.OK).json({
       status: "Success",
-      message: "All users find successfully",
-      result: result,
+      message: "Users fetched successfully",
+      data: result.users,
+      totalCount: result.totalCount,
+      currentPage: Number(page),
+      totalPages: Math.ceil(result.totalCount / Number(limit)),
     });
-  } catch (error) {
+  } catch (error: any) {
     return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
       status: "Failed",
-      message: "Something went wrong while find all user",
-      error: error || "Internal server error",
+      message: "Something went wrong while fetching users",
+      error: error.message || "Internal server error",
     });
   }
 };
+// const find = async (req: Request, res: Response) => {
+//   try {
+//     const result = await UserService.find();
+//     return res.status(httpStatus.OK).json({
+//       status: "Success",
+//       message: "All users find successfully",
+//       result: result,
+//     });
+//   } catch (error) {
+//     return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+//       status: "Failed",
+//       message: "Something went wrong while find all user",
+//       error: error || "Internal server error",
+//     });
+//   }
+// };
 const findById = async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
