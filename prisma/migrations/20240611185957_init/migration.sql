@@ -31,6 +31,14 @@ CREATE TABLE "users" (
 );
 
 -- CreateTable
+CREATE TABLE "bookmarks" (
+    "id" TEXT NOT NULL,
+    "userId" VARCHAR(100) NOT NULL,
+
+    CONSTRAINT "bookmarks_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "locations" (
     "id" TEXT NOT NULL,
     "uniqueIdentifier" TEXT NOT NULL,
@@ -95,6 +103,9 @@ CREATE UNIQUE INDEX "_UserChats_AB_unique" ON "_UserChats"("A", "B");
 
 -- CreateIndex
 CREATE INDEX "_UserChats_B_index" ON "_UserChats"("B");
+
+-- AddForeignKey
+ALTER TABLE "bookmarks" ADD CONSTRAINT "bookmarks_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "search-request" ADD CONSTRAINT "search-request_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

@@ -28,10 +28,18 @@ model User {
   updatedAt      DateTime        @updatedAt
   searchRequests SearchRequest[]
   chats          ChatRoom[]      @relation("UserChats")
-  messages       Message[]       @relation("UserMessages")
+  messages       Message[]       @relation("UserMessages")   
 
   @@map(name: "users")
 }
+
+model BookMark {
+  id       String @id @default(cuid())
+  userId   String @db.VarChar(100)
+  markedId String @db.VarChar(100)
+  @@map(name: "bookmarks")
+}
+
 
 enum Gender {
   male

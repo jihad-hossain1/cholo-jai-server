@@ -5,6 +5,8 @@ const router = express.Router();
 router
   .get("/all", UserController.find)
   .get("/findById/:id", UserController.findById)
+  .get("/find-id/:id", UserController.findId)
+  .post("/bookmark/:id", UserController.bookmark)
   .get("/findByMobile/:mobile", UserController.findByMobile)
   .patch("/update/:id", UserController.update)
   .delete("/remove/:id", UserController.remove);

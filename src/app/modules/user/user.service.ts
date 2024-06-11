@@ -61,6 +61,25 @@ const findById = async (id: any) => {
   });
   return result;
 };
+const findId = async (id: string) => {
+  const result = await prisma.user.findFirst({
+    where: {
+      id: id,
+    },
+    select: {
+      id: true,
+      fullName: true,
+      email: true,
+      mobile: true,
+      gender: true,
+      age: true,
+      occupation: true,
+      role: true,
+    },
+  });
+
+  return result;
+};
 
 const findByMobile = async (mobile: string) => {
   const result = await prisma.user.findUnique({
@@ -89,10 +108,22 @@ const remove = async (id: string) => {
   return result;
 };
 
+const bookmark = async (data: any) => {
+  const result = await prisma.bookMark.create({
+    data: {
+      userId: data.userId,
+      markedId: data.markedId,
+    },
+  });
+  return result;
+};
+
 export const UserService = {
   find,
   findById,
   update,
   remove,
   findByMobile,
+  bookmark,
+  findId,
 };

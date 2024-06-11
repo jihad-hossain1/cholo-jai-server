@@ -1,14 +1,19 @@
 import { Request, Response } from "express";
 import httpStatus from "http-status";
 import { UserService } from "./user.service";
+import prisma from "../../../shared/prisma";
 
 const find = async (req: Request, res: Response) => {
   // const query = req.
-  
+
   const { page = 1, limit = 10, search = "" } = req.query;
 
   try {
-    const result = await UserService.find(Number(page), Number(limit), search as string);
+    const result = await UserService.find(
+      Number(page),
+      Number(limit),
+      search as string
+    );
     return res.status(httpStatus.OK).json({
       status: "Success",
       message: "Users fetched successfully",
@@ -113,6 +118,79 @@ const remove = async (req: Request, res: Response) => {
   }
 };
 
+const bookmark = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const data = req.body;
+
+    const split = id?.split("=")[1];
+
+    if (!data?.userId || !id) {
+      return res.status(httpStatus.BAD_REQUEST).json({
+        status: "Failed",
+        message: "User id and marked id is required",
+      });
+    }
+
+    const findDuplicate = await prisma.bookMark.findFirst({
+      where: {
+        userId: data?.userId,
+        markedId: split,
+      },
+    });
+
+    if (findDuplicate) {
+      return res.status(httpStatus.BAD_REQUEST).json({
+        status: "Failed",
+        message: "User already bookmarked",
+      });
+    }
+
+    const result = await UserService.bookmark({
+      userId: data?.userId,
+      markedId: split,
+    });
+    return res.status(httpStatus.OK).json({
+      status: "Success",
+      message: "User bookmark successfully",
+      result: result,
+    });
+  } catch (error) {
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while bookmark user",
+      error: error || "Internal server error",
+    });
+  }
+};
+
+const findId = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const userIdSpit = id?.split("=")[1];
+
+    const result = await UserService.findId(userIdSpit);
+
+    if (!result) {
+      return res.status(httpStatus.BAD_REQUEST).json({
+        status: "Failed",
+        message: "User not found",
+      });
+    }
+
+    return res.status(httpStatus.OK).json({
+      status: "Success",
+      message: "user find successfully",
+      result: result,
+    });
+  } catch (error) {
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while find single user",
+      error: error || "Internal server error",
+    });
+  }
+};
 
 export const UserController = {
   find,
@@ -120,4 +198,6 @@ export const UserController = {
   update,
   remove,
   findByMobile,
+  bookmark,
+  findId,
 };
