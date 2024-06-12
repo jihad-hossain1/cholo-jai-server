@@ -192,6 +192,25 @@ const findId = async (req: Request, res: Response) => {
   }
 };
 
+const findBookmarks = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const result = await UserService.findBookmarks({ userId: id });
+
+    return res.status(httpStatus.OK).json({
+      status: "Success",
+      message: "User find successfully",
+      result: result,
+    });
+  } catch (error) {
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      status: "Failed",
+      message: "Something went wrong while find single user",
+      error: error || "Internal server error",
+    });
+  }
+};
+
 export const UserController = {
   find,
   findById,
@@ -200,4 +219,5 @@ export const UserController = {
   findByMobile,
   bookmark,
   findId,
+  findBookmarks,
 };

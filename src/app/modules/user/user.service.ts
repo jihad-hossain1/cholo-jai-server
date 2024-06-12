@@ -118,6 +118,37 @@ const bookmark = async (data: any) => {
   return result;
 };
 
+const findBookmarks = async (data: { userId: string }) => {
+  const result = await prisma.bookMark.findMany({
+    where: {
+      userId: data.userId,
+    },
+  });
+
+  const buildUserList = result?.map(
+    (item: { markedId: string }) => item?.markedId
+  );
+
+  const userList = await prisma.user.findMany({
+    where: {
+      id: {
+        in: buildUserList,
+      },
+    },
+    select: {
+      id: true,
+      fullName: true,
+      mobile: true,
+      gender: true,
+      age: true,
+      occupation: true,
+      role: true,
+    },
+  });
+
+  return userList;
+};
+
 export const UserService = {
   find,
   findById,
@@ -126,4 +157,5 @@ export const UserService = {
   findByMobile,
   bookmark,
   findId,
+  findBookmarks,
 };

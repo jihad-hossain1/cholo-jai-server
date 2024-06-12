@@ -4,6 +4,7 @@ const router = express.Router();
 
 router
   .get("/all", UserController.find)
+  .get("/find-bookmarks/:id", UserController.findBookmarks)
   .get("/findById/:id", UserController.findById)
   .get("/find-id/:id", UserController.findId)
   .post("/bookmark/:id", UserController.bookmark)
