@@ -31,7 +31,7 @@ const createChat = async (req: Request, res: Response) => {
   const { senderUserId, receiverUserId } = req.body;
 
   if (!senderUserId) {
-    console.log("senderUserId param not sent with request");
+    console.error("senderUserId param not sent with request");
     return res.sendStatus(400);
   }
 

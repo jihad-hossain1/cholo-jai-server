@@ -34,7 +34,7 @@ const search = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     catch (error) {
         return res.status(http_status_1.default.INTERNAL_SERVER_ERROR).json({
             status: "Failed",
-            message: "Something went wrong while searing a user",
+            message: "Something went wrong while searching a user",
             error: error || "Internal server error",
         });
     }
