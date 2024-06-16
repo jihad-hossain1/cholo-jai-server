@@ -39,16 +39,21 @@ const search = async (data: {
     });
 
     if (createASearchReq) {
-      const now = new Date();
-      const twoMinutesAgo = new Date(now.getTime() - 2 * 60 * 1000);
-      const twoMinutesFromNow = new Date(now.getTime() + 2 * 60 * 1000);
+      const startTime = Date.now();
+      const pollDuration = 30 * 1000; // 30 seconds
 
       // Poll for matching requests => The matched search request or undefined if no matching request is found.
       const pollForMatchingRequests = async (): Promise<
         SearchRequest | undefined
       > => {
-        let searchResults: any;
-        let searchResultsForTraveler: any;
+        const elapsedTime = Date.now() - startTime;
+
+        if (elapsedTime >= pollDuration) {
+          throw new Error("No matching request found within 30 seconds.");
+        }
+
+        let searchResults: any = [];
+        let searchResultsForTraveler: any = [];
 
         // Find matching requests based on the user's role
         if (findUser?.role === "sharer") {
@@ -60,8 +65,8 @@ const search = async (data: {
               filterVehicleType: data?.filterVehicleType,
               filterGenderType: data?.filterGenderType,
               createdAt: {
-                gte: twoMinutesAgo,
-                lte: twoMinutesFromNow,
+                gte: new Date(startTime - 2 * 60 * 1000), // 2 minutes ago
+                lte: new Date(startTime + pollDuration), // 30 seconds from now
               },
               matched: false,
             },
@@ -75,8 +80,8 @@ const search = async (data: {
               filterVehicleType: data?.filterVehicleType,
               filterGenderType: data?.filterGenderType,
               createdAt: {
-                gte: twoMinutesAgo,
-                lte: twoMinutesFromNow,
+                gte: new Date(startTime - 2 * 60 * 1000), // 2 minutes ago
+                lte: new Date(startTime + pollDuration), // 30 seconds from now
               },
               matched: false,
             },
@@ -96,8 +101,8 @@ const search = async (data: {
                 { filterGenderType: data?.filterGenderType },
                 {
                   createdAt: {
-                    gte: twoMinutesAgo,
-                    lte: twoMinutesFromNow,
+                    gte: new Date(startTime - 2 * 60 * 1000), // 2 minutes ago
+                    lte: new Date(startTime + pollDuration), // 30 seconds from now
                   },
                 },
                 { matched: false },
@@ -118,12 +123,12 @@ const search = async (data: {
           return matchedResult;
         } else {
           // If no matching request is found, wait for 5 seconds and poll again
-          await new Promise((resolve) => setTimeout(resolve, 5000));
+          await new Promise((resolve) => setTimeout(resolve, 4000));
           return pollForMatchingRequests();
         }
       };
 
-      return pollForMatchingRequests();
+      return await pollForMatchingRequests();
     }
   } catch (error) {
     console.error("Failed to process search request:", error);
