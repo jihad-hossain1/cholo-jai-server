@@ -12,7 +12,7 @@ CREATE TABLE "users" (
     "id" TEXT NOT NULL,
     "fullName" VARCHAR(50) NOT NULL,
     "userName" VARCHAR(30),
-    "email" TEXT NOT NULL,
+    "email" VARCHAR(100) NOT NULL,
     "password" VARCHAR(150) NOT NULL,
     "mobile" VARCHAR(11) NOT NULL,
     "gender" "Gender" NOT NULL,
@@ -40,26 +40,36 @@ CREATE TABLE "bookmarks" (
 );
 
 -- CreateTable
-CREATE TABLE "locations" (
+CREATE TABLE "Location" (
     "id" TEXT NOT NULL,
-    "uniqueIdentifier" TEXT NOT NULL,
-    "locationName" TEXT NOT NULL,
+    "uniqueIdentifier" VARCHAR(50) NOT NULL,
+    "locationName" VARCHAR(100) NOT NULL,
 
-    CONSTRAINT "locations_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Location_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "ConnectedLocation" (
+    "id" TEXT NOT NULL,
+    "fromLocationId" TEXT NOT NULL,
+    "toLocationId" TEXT NOT NULL,
+    "distance" INTEGER,
+
+    CONSTRAINT "ConnectedLocation_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "search-request" (
     "id" TEXT NOT NULL,
-    "fullName" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
-    "gender" TEXT NOT NULL,
-    "role" TEXT NOT NULL,
-    "currentLocation" TEXT NOT NULL,
-    "destinationLocation" TEXT NOT NULL,
-    "filterVehicleType" TEXT,
-    "filterVehicleCapacity" TEXT,
-    "filterGenderType" TEXT,
+    "fullName" VARCHAR(50) NOT NULL,
+    "email" VARCHAR(100) NOT NULL,
+    "gender" VARCHAR(10) NOT NULL,
+    "role" VARCHAR(20) NOT NULL,
+    "currentLocation" VARCHAR(100) NOT NULL,
+    "destinationLocation" VARCHAR(100) NOT NULL,
+    "filterVehicleType" VARCHAR(20),
+    "filterVehicleCapacity" VARCHAR(20),
+    "filterGenderType" VARCHAR(10),
     "matched" BOOLEAN NOT NULL,
     "userId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -100,10 +110,37 @@ CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 CREATE UNIQUE INDEX "users_mobile_key" ON "users"("mobile");
 
 -- CreateIndex
+CREATE INDEX "users_fullName_userName_idx" ON "users"("fullName", "userName");
+
+-- CreateIndex
+CREATE INDEX "bookmarks_userId_markedId_idx" ON "bookmarks"("userId", "markedId");
+
+-- CreateIndex
+CREATE INDEX "Location_uniqueIdentifier_idx" ON "Location"("uniqueIdentifier");
+
+-- CreateIndex
+CREATE INDEX "Location_locationName_idx" ON "Location"("locationName");
+
+-- CreateIndex
+CREATE INDEX "ConnectedLocation_fromLocationId_toLocationId_idx" ON "ConnectedLocation"("fromLocationId", "toLocationId");
+
+-- CreateIndex
+CREATE INDEX "search-request_fullName_email_currentLocation_destinationLo_idx" ON "search-request"("fullName", "email", "currentLocation", "destinationLocation");
+
+-- CreateIndex
+CREATE INDEX "messages_chatRoomId_senderId_idx" ON "messages"("chatRoomId", "senderId");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "_UserChats_AB_unique" ON "_UserChats"("A", "B");
 
 -- CreateIndex
 CREATE INDEX "_UserChats_B_index" ON "_UserChats"("B");
+
+-- AddForeignKey
+ALTER TABLE "ConnectedLocation" ADD CONSTRAINT "ConnectedLocation_fromLocationId_fkey" FOREIGN KEY ("fromLocationId") REFERENCES "Location"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "ConnectedLocation" ADD CONSTRAINT "ConnectedLocation_toLocationId_fkey" FOREIGN KEY ("toLocationId") REFERENCES "Location"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "search-request" ADD CONSTRAINT "search-request_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

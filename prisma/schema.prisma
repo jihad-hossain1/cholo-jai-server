@@ -12,9 +12,9 @@ model User {
   id             String          @id @default(uuid())
   fullName       String          @db.VarChar(50)
   userName       String?         @db.VarChar(30)
-  email          String          @unique
+  email          String          @unique @db.VarChar(100) // Index added
   password       String          @db.VarChar(150)
-  mobile         String          @unique @db.VarChar(11)
+  mobile         String          @unique @db.VarChar(11) // Index added
   gender         Gender
   role           Role
   age            Int
@@ -28,8 +28,9 @@ model User {
   updatedAt      DateTime        @updatedAt
   searchRequests SearchRequest[]
   chats          ChatRoom[]      @relation("UserChats")
-  messages       Message[]       @relation("UserMessages")   
+  messages       Message[]       @relation("UserMessages")
 
+  @@index([fullName, userName]) // Index for faster name-based searches
   @@map(name: "users")
 }
 
@@ -37,9 +38,10 @@ model BookMark {
   id       String @id @default(cuid())
   userId   String @db.VarChar(100)
   markedId String @db.VarChar(100)
+
+  @@index([userId, markedId]) // Index for faster searches on bookmarks
   @@map(name: "bookmarks")
 }
-
 
 enum Gender {
   male
@@ -58,30 +60,45 @@ enum Occupation {
 }
 
 model Location {
-  id               String @id @default(uuid())
-  uniqueIdentifier String
-  locationName     String
+  id                     String              @id @default(uuid())
+  uniqueIdentifier       String              @db.VarChar(50)
+  locationName           String              @db.VarChar(100)
+  connectedLocationsFrom ConnectedLocation[] @relation("FromLocation")
+  connectedLocationsTo   ConnectedLocation[] @relation("ToLocation")
 
-  @@map(name: "locations")
+  @@index([uniqueIdentifier])
+  @@index([locationName])
+}
+
+model ConnectedLocation {
+  id             String   @id @default(uuid())
+  fromLocationId String
+  toLocationId   String
+  fromLocation   Location @relation("FromLocation", fields: [fromLocationId], references: [id])
+  toLocation     Location @relation("ToLocation", fields: [toLocationId], references: [id])
+  distance       Int?
+
+  @@index([fromLocationId, toLocationId])
 }
 
 model SearchRequest {
   id                    String   @id @default(uuid())
-  fullName              String
-  email                 String
-  gender                String
-  role                  String
-  currentLocation       String
-  destinationLocation   String
-  filterVehicleType     String?
-  filterVehicleCapacity String?
-  filterGenderType      String?
+  fullName              String   @db.VarChar(50)
+  email                 String   @db.VarChar(100)
+  gender                String   @db.VarChar(10)
+  role                  String   @db.VarChar(20)
+  currentLocation       String   @db.VarChar(100)
+  destinationLocation   String   @db.VarChar(100)
+  filterVehicleType     String?  @db.VarChar(20)
+  filterVehicleCapacity String?  @db.VarChar(20)
+  filterGenderType      String?  @db.VarChar(10)
   matched               Boolean
   userId                String
   user                  User     @relation(fields: [userId], references: [id])
   createdAt             DateTime @default(now())
   updatedAt             DateTime @default(now())
 
+  @@index([fullName, email, currentLocation, destinationLocation]) // Index for common search fields
   @@map(name: "search-request")
 }
 
@@ -103,5 +120,6 @@ model Message {
   senderId   String
   createdAt  DateTime @default(now())
 
+  @@index([chatRoomId, senderId]) // Index for faster message retrieval by chat room and sender
   @@map(name: "messages")
 }
